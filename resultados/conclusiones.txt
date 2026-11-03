@@ -1,0 +1,7 @@
+En las 160 imágenes de prueba reservadas, la CNN desde cero acertó 131 (81.88%) y MobileNetV2 acertó 160 (100.00%). MobileNetV2 obtuvo 18.13 puntos porcentuales más de exactitud. El F1 macro fue 0.8172 y 1.0000, respectivamente.
+
+Para CNN desde cero, una de las confusiones más frecuentes fue chandelier → brain, con 5 casos.
+
+MobileNetV2 transferencia no presentó errores en esta muestra de prueba.
+
+En transferencia se eligió la fase de ajuste fino según la pérdida de validación. El conocimiento previo de ImageNet y la arquitectura son diferencias entre las redes: esta comparación práctica no aísla el efecto de preentrenar una misma arquitectura. Se necesitarían más particiones o semillas para estudiar estabilidad.

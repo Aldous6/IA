@@ -1,0 +1,3 @@
+modelo,exactitud,f1_macro,aciertos,imagenes_prueba
+CNN desde cero,0.81875,0.8172079306764906,131,160
+MobileNetV2 transferencia,1.0,1.0,160,160

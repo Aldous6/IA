@@ -1,0 +1,11 @@
+,airplanes,Motorbikes,bonsai,brain,butterfly,chandelier,ketch,Leopards,revolver,sunflower
+airplanes,16,0,0,0,0,0,0,0,0,0
+Motorbikes,0,16,0,0,0,0,0,0,0,0
+bonsai,0,0,16,0,0,0,0,0,0,0
+brain,0,0,0,16,0,0,0,0,0,0
+butterfly,0,0,0,0,16,0,0,0,0,0
+chandelier,0,0,0,0,0,16,0,0,0,0
+ketch,0,0,0,0,0,0,16,0,0,0
+Leopards,0,0,0,0,0,0,0,16,0,0
+revolver,0,0,0,0,0,0,0,0,16,0
+sunflower,0,0,0,0,0,0,0,0,0,16

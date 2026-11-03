@@ -1,0 +1,16 @@
+datos/
+.keras/
+.jupyter/
+.ipython/
+.ipynb_checkpoints/
+.venv*/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.weights.h5
+*.zip
+.env
+.env.*
+.DS_Store
+Thumbs.db

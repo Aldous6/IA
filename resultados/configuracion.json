@@ -1,0 +1,38 @@
+{
+  "python": "3.12.10",
+  "tensorflow": "2.20.0",
+  "keras": "3.15.1",
+  "numpy": "2.5.4",
+  "pandas": "3.1.0",
+  "scikit_learn": "1.9.1",
+  "dispositivo": "CPU",
+  "ejecucion_utc": "2026-11-03T03:31:46.449621+00:00",
+  "semilla": 42,
+  "tamano_imagen": 128,
+  "clases": [
+    "airplanes",
+    "Motorbikes",
+    "bonsai",
+    "brain",
+    "butterfly",
+    "chandelier",
+    "ketch",
+    "Leopards",
+    "revolver",
+    "sunflower"
+  ],
+  "imagenes_por_clase": 80,
+  "proporciones": {
+    "entrenamiento": 0.6,
+    "validacion": 0.2,
+    "prueba": 0.2
+  },
+  "epocas_cnn": 30,
+  "epocas_cabeza": 13,
+  "epocas_ajuste_fino": 5,
+  "fase_elegida": "ajuste fino",
+  "segundos_cnn": 108.84622780000791,
+  "segundos_transfer": 186.91470429999754,
+  "url_datos": "https://data.caltech.edu/records/mzrjq-6wc02",
+  "md5_dataset": "3138e1922a9193bfa496528edbbc45d0"
+}
