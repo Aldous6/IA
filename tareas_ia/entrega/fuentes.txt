@@ -1,0 +1,83 @@
+[P3] Material de clase, sin fecha. 3-Estado del Arte de la IA-e.ppt.
+
+[P5] Material de clase, sin fecha. 5-Agentes inteligentes-1de2.pdf, página 9 (Tarea 2).
+
+[P6] Material de clase, sin fecha. 6-Agentes inteligentes-2de2.pdf, páginas 10–13 (Tarea 3).
+
+[A1] OpenAI. Use ChatGPT. Documentación oficial, s.f.
+https://learn.chatgpt.com/docs/use-chatgpt
+
+[A2] OpenAI. Models. Documentación oficial, s.f.
+https://learn.chatgpt.com/docs/models
+
+[A3] Anthropic. Models overview. Documentación oficial, s.f.
+https://platform.claude.com/docs/en/models/overview
+
+[A4] Anthropic. Computer use tool. Documentación oficial, s.f.
+https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool
+
+[A5] Gemini Team, Google DeepMind (2025). Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next Generation Agentic Capabilities, sección 2.1.
+https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf
+
+[A6] Google. Using tools with Gemini API. Documentación oficial, s.f.
+https://aistudio.google.com/docs/tools
+
+[A7] Microsoft. Microsoft Copilot overview. Documentación oficial, s.f.
+https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-overview
+
+[A8] GitHub. About GitHub Copilot. Documentación oficial, s.f.
+https://docs.github.com/en/copilot/get-started/about-github-copilot
+
+[A9] GitHub. GitHub Copilot on GitHub.com and GitHub Mobile. Incluye la experiencia disponible desde el 28 de octubre de 2026.
+https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-on-github
+
+[B1] Perplexity. Rethinking Search as Code Generation. Publicación técnica oficial, s.f.
+https://www.perplexity.ai/en-GB/hub/blog/rethinking-search-as-code-generation
+
+[B2] Perplexity. What is Pro Search? Documentación oficial, s.f.
+https://www.perplexity.ai/help-center/en/articles/10352903-what-is-pro-search
+
+[B3] Amazon. How Amazon rebuilt Alexa with generative AI. Publicación técnica oficial, s.f.
+https://www.aboutamazon.com/news/devices/new-alexa-tech-generative-artificial-intelligence
+
+[B4] Yoshitake, M. (26 de febrero de 2025). Introducing AI-native SDKs for Alexa+. Amazon Developer.
+https://developer.amazon.com/en-US/blogs/alexa/alexa-skills-kit/2025/02/new-alexa-announce-blog
+
+[B5] Apple Machine Learning Research (8 de junio de 2026; actualización 9 de septiembre de 2026). Introducing the Third Generation of Apple’s Foundation Models.
+https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models
+
+[B6] Apple (14 de septiembre de 2026). Siri AI, a profoundly more capable and personal assistant powered by the next generation of Apple Intelligence, is here. Apple Newsroom.
+https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/
+
+[B7] Isomorphic Labs (8 de mayo de 2024; actualización 11 de noviembre de 2024). AlphaFold 3 predicts the structure and interactions of all of life’s molecules.
+https://www.isomorphiclabs.com/articles/alphafold-3-predicts-the-structure-and-interactions-of-all-of-lifes-molecules
+
+[B8] Google DeepMind. AlphaFold 3 inference pipeline. Repositorio oficial, s.f.
+https://github.com/google-deepmind/alphafold3
+
+[B9] Waymo. Waymo Driver: Self-Driving Car Technology for a Reliable Ride. Descripción técnica oficial, s.f.
+https://waymo.com/waymo-driver/
+
+[B10] The Waymo Team (6 de julio de 2021). Simulation City: Introducing Waymo’s most advanced simulation system yet for autonomous driving.
+https://waymo.com/blog/2021/07/simulation-city/
+
+[C1] Ritter, F. E., Kim, J. W. y Oury, J. D. (20 de junio de 2017). ACT-R: Frequently Asked Questions List. Penn State, secciones G1, G4 y G8.
+https://acs.ist.psu.edu/projects/act-r-faq/act-r-faq.html
+
+[C2] Dulam, S., Gay, J. R. y Dancy, C. L. (2026). New knowledge source pipelines for sociocultural representations in a cognitive architecture. Frontiers in Psychology, 17, 1874556.
+https://doi.org/10.3389/fpsyg.2026.1874556
+
+[C3] Wang, P. (agosto de 2026). A Logical Model of Intelligence — An introduction to NARS. Temple University.
+https://cis.temple.edu/~pwang/NARS-Intro.html
+
+[C4] OpenNARS. OpenNARS for Research 3.0+. Repositorio oficial, s.f.
+https://github.com/opennars/opennars
+
+[G1] Morris, M. R. y colaboradores (2023; revisión 2025). Levels of AGI for Operationalizing Progress on the Path to AGI. arXiv:2311.02462.
+https://arxiv.org/abs/2311.02462
+
+[T1] Jones, C. R. y Bergen, B. K. (19 de mayo de 2026). Large language models pass a standard three-party Turing test. PNAS, 123(21), e2524472123. Tablas 1 y 2.
+https://doi.org/10.1073/pnas.2524472123
+
+[L1] Russell, S. y Norvig, P. Artificial Intelligence: A Modern Approach. Capítulo 2, Intelligent Agents, página impresa 36 del capítulo público: supuestos del mundo aspiradora.
+https://aima.eecs.berkeley.edu/4th-ed/pdfs/newchap02.pdf

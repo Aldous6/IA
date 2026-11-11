@@ -1,0 +1,76 @@
+Click to edit Master title style
+Click to edit Master text stylesSecond levelThird levelFourth levelFifth level
+*
+Click to edit Master text stylesSecond levelThird levelFourth levelFifth level
+*
+Búsqueda TabúPor entornosBúsqueda más allá del óptimo localRealiza la operación con el mejor de los movimientos posiblesSe mueve a una solución del entorno, aunque no sea tan buena de forma que se puede escapar de óptimos  locales para continuar estratégicamente la búsqueda de soluciones mejores.- Clasifica un determinado número de movimientos más recientes como movimientos tabú.Mantiene una memoria de eventos (soluciones, o algún elemento propio de las soluciones visitadas), y luego usa esa memoria para alterar el entorno de la solución actual.Hace uso de estructuras especiales de memoria y de estrategias de búsqueda dinámicas que guían el proceso de optimización de un modo eficiente.Usan la inteligencia en lugar de la fuerza bruta como la de los AGs, las NNs y el Templado SimuladoAplicacionesSecuenciación	- Flow-Time Cell Manufacturing	- Procesadores heterogéneos	- Calendarización (Scheduling)	- Planificación de fuerza laboral
+G.Luger
+*
+Diseño	- CAD	- Redes tolerantes a fallas	- Diseño de redes de transporte	- Planificación de espacios en Arquitectura	….Lógica e IA	- Satisfactibilidad máxima	- Clustering (agrupamiento)	- Reconocimiento y clasificación de patrones	- Integridad de datos	- Entrenamiento de NNs	…..Tecnología	- Inversión sísmica	- Distribución de energía eléctrica	- Diseño estructural de ingeniería	- Construcción de estaciones espaciales	……Telecomunicaciones	- Enrutamiento de llamadas	- Asignación de anchos de banda (Bandwidth Packing)	- Diseño de redes para servicios	- Redes ópticas sincrónicas	…..
+Producción, Inventarios e InversiónSelección de componentesPlanificación de inventariosInversiones de tasa fija…..RutasVehicularesEnrutamiento con flota fijaTSPSecuenciación de ConvoyesGrafosOptimización combinatoria
+*
+TS (Tabu Search) incorpora:	- Memoria adaptiva	- Exploración sensibleFundamentos de TSDada una f(x) que hay que optimizar en un conjunto X, TS empieza iterativamente desde un punto (solución)a otro hasta satisfacer un criterio dado.Cada 	            tiene un entorno asociado		Y cada solución			se alcanza desde x mediante un movimiento u operaciónLuego se modifica N(x) a medida que progresa la búsqueda, entonces se reemplaza N(x) por otro entornoN*(x), con eso se rebasa la búsqueda local.En TS una memoria fuerza (presiona) la búsqueda a explorar nuevas áreas del espacio de búsqueda.	- Se memorizan algunas soluciones que han sido examinadas recientemente y de este modo se	   vuelven puntos tabú (prohibidos) que han de evitarse en la toma de decisiones, acerca de la 	   selección de la siguiente solución.TS es determinístico, ó sea es no-aleatorio (opuesto al templado simulado).Ejemplo:SATLa teoría es hacer una combinación de una expresión de variables Booleanas que resulten TRUE.Si	n=100 	y tenemos	
+*
+El desafío es encontrar la asignación verdadera para cada variable 	       para  todo i =1, …, 100  tal queF(x) = TRUE	Si tenemos dos opciones para cada variable y son 100 variables, entonces segenerarían 			posibilidadesSupongamos que se quiere resolver el problema del SAT un con: n=8, entonces estaremos buscando la asignación verdadera a cada una de las variables con la cual la expresión F sea TRUE. Esto es, si suponemos que generamos una asignación inicial para  x =(x1 ,…, x8 ),  que sea	                     x = (0,1,1,1,0,0,0,1)Usamos una función de evaluación que nos sirve de retroalimentación a la búsqueda.	- La suma pesada de cláusulas satisfechas, donde los pesos dependen del número de variables en	   la cláusula.Supongamos que ese valor es 27.Examinamos los vecinos de x, hay 8 soluciones que se obtienen cambiando un bit cada vez, y después los evaluamos y elegimos el mejor.(Hasta aquí similar al Hill-Climbing).Ahora, para llevar un registro de nuestras acciones:	- Recordaremos el índice de una variable que fue cambiada, y el tiempo en el cual se hizo esto.	  Entonces el vector M será la memoria inicialmente en 0, y en cualquier estado de la búsqueda,	la entrada	M(i) = j	(donde                )     se interpreta como:	“ j es la iteración más reciente donde el i-avo bit fue cambiado”
+Hay que considarar que cada variable podría estar en una o en mas cláusulas de la expresión F(x). Ello para el cálculo de la función de evaluación.
+*
+Si modelamos un aspecto de la memoria donde después de un cierto período la memoria es borrada ( por ejemplo digamos 5 iteraciones) y entonces una nueva interpretación de una entrada podría ser:		M(i) = j	(donde            )       debería ser:“El i-teavo bit fue cambiado hace 	5 - j iteraciones” y después de una iteración en nuestro ejemplo, la memoria M se vería:Esa posición no está disponible durante 5 cambios (flips)Y luego por cada entrada, las posiciones que no son cero serán decrementadas para poder así realizar el proceso de olvido. O sea el cambio más reciente requiere de un contador de iteraciones t el cual se compara con los valores de la memoria. Específicamente,	si	t – M(i) >5Por ejemplo, si después de 4 iteraciones de seleccionar el “mejor” vecino la memoria es:El bit 1 no está disponible por 3 iteraciones siguientes,El bit 3 estaría después de la próxima iteración.El bit 4 fue cambiado recientemente y no está disponible por las siguientes 5 iteraciones.Entonces el cambio más reciente:	M(4) = 5  :  el bit 4 fué cambiado hace 5 – 5 iteraciones (recientemente).
+0
+0
+5
+0
+0
+0
+0
+0
+3
+0
+1
+5
+0
+4
+2
+0
+*
+Y los otros cambiados previamente son:	bit 6 (en iteración 4), se pone como M(6) = 4	bit 1 (en iteración 3),	      “	  M(1) = 3	bit 7 (en iteración 2),	      “	  M(7) = 2	bit 3 (en iteración 1),	      “	  M(3) = 1Entonces si tenemos una solución actual:	x = (1,1,0,0,0,1,1,1)	con peso supuesto de 33 y examinamos los vecinos de x, que consisten en 8 soluciones, las cuales corresponden a “flips” sobre los bits 1 al 8 respectivamente.x1 = 0,1,0,0,0,1,1,1x2 = 1,0,0,0,0,1,1,1x3 = 1,1,1,0,0,1,1,1x4 = 1,1,0,1,0,1,1,1x5 = 1,1,0,0,1,1,1,1x6 = 1,1,0,0,0,0,1,1x7 = 1,1,0,0,0,1,0,1x8 = 1,1,0,0,0,1,1,0En una siguiente iteración (6), no es posible (tabú) cambiar los bits: 1,3,4,6,7 porque fueron tratados recien-temente y por lo pronto no se consideran sus soluciones, y la próxima solución es seleccionada desde un conjunto de x2, x5 y x8.	
+*
+Suponga que el mejor es x5 con suma pesada de 32, esto es menor que la actual (33).Después de esta iteración, los contenidos de la memoria cambian y todos los no-cero se decrementan. O sea:	M(3) = 1,	es ahora	M(3) = 0	y 	M(5)	se cambia de cero a 5 (posición tabú por cinco iteraciones.Entonces la memoria sería:
+2
+0
+0
+4
+5
+3
+1
+0
+y así, son ejecutadas iteraciones adicionales. En cualquier estado hay una solución en curso siendo procesada,la cual implica un vecindario, y desde este vecindario las soluciones tabú son eliminadas de posible exploración.Lo anterior lleva a considerar una memoria (aspiración)  basada en lo reciente.Es posible también considerar memoria basada en  frecuencia para operar sobre un horizonte más grande.Tenemos por ejemplo: 	un vector H	      (memoria de largo-plazo)y	H(i) = j	indicaría:	“durante las últimas h iteraciones el i-teavo bit fue cambiado j veces.Ejem:	h = 50	H es   
+5
+7
+11
+3
+9
+8
+1
+6
+Lo anterior representa la distribución de movimientos después de las ultimas 50 iteraciones (de un total de 100).La fórmula para una nueva solución x’ es:	eval(x’) – penalidad (x’)	y suponiendo que la penalidad (x’) = 0.7H(i) 
+*
+Y para nuestro ejemplo, suponiendo que los bits: 2, 3 y 7 son  “flips” no-tabú, que proporcionan los valores (eval(x’))30, 33, y 31Se tendría que	30 – 0.7(7)   = 25.1	33 – 0.7(11) = 25.3	31 – 0.7(1)   = 30.3		se elige esta posición.Lo anterior diversifica la búsqueda.Algoritmo: Para el caso del TSP	         procedimiento  tabú search	         begin	     	intentos         0		repeat		      genera una aproximación inicial x (genera tour-TSP)		      contador         0 		      repeat			genera un subconjunto de vecindades N(x)			selecciona la mejor aproximación admisible desde N(x)			actualiza lista tabú (por el intercambio de 2 ciudades)			if si el nuevo x’ es mejor ( f(x) < f(x’)) hasta ahora por un numero dado de “intentos”			then      x         x’       actualiza el mejor			contador         contador + 1		      until      contador = ITER		      intentos          intentos + 1			      if   x actual es el mejor hasta aquí (para todos los “intentos”)		      then   actualiza información del tour mejor global		until    intentos = MAX-INTENTOS	         end      
+*
+*
+The following solution (for an eight-city TSP ) , ( 2 , 4 , 7, 5 , 1 , 8 , 3 , 6) , has 28 neighbors ,(7 x 8)/2 = 28Una solución  puede ser: (7,3,5,6,1,2,4,8) y suponiendo que buscando en su vecindario se tiene que con un horizonte de 5 como límite que indica el intercambio (swap) más reciente. Quiere decir que el cuadro que tiene 5 en la figura 5.10No debe seleccionarse o no está disponible (es tabú) por las próximas 5 iteraciones
+Fig. 5 . 1 0 . The contents of the recency-based memory M for the TSP after 500 iterations .The horizon is five iterations .
+*
+Donde el intercambio de las ciudades i y j se registra en la i-ésima fila y la j-ésima columna (para i < j)
+Para interpretar estas memorias, el valor M(2, 6) = 5 indica que el intercambio más reciente fue hecho por las ciudades 2 y 6 , i.e. , La solución actual-previa era (7, 3 , 5 , 2, 1 , 6 , 4, 8 ) .Por lo tanto el intercambio de estas ciudades 2 y 6 es tabú por las próximas 5 iteraciones
+La solución actual (ahora)es: (7, 3, 5, 6, 1, 2, 4, 8)
+2       3            4           5           6             7          8
+1234567
+Fig. 5 . 1 1 . The contents of the frequency-based memory F for the TSP after 500 iterations .The horizon is 50 iterations .
+El intercambio de las ciudades 7 y 8 fue el más frecuente, y hay pares de ciudades (como la 3 y 8) que no fueron intercambiadas dentro de las últimas 50 iteraciones. Otro tipo de intercambio es el de borrar 2 aristas no-adyacentes, y agregar otras dos aristas para obtener un nuevo tour factible.
+*
+Fig . 3 . 6 . A tour (a) before and (b) after · the 2- interchange move is applied. Broken lines indicate affected edges .
+(a)				(b)
+*
+Tarea 6Implementar la heurística de búsqueda tabú para el problema del TSP y analizar su comportamiento para diferentes valores del número de ciudades, donde se permita establecer las diferencias de  desempeño, respecto al uso del templado simulado para 15 ciudades que se usó en la tarea 5. Se puede elegir busqueda tabú basada en lo reciente ó la basada en frecuencia.
+*
+*

@@ -21,7 +21,7 @@ os.environ['JUPYTER_PATH'] = str(jupyter_path)
 os.environ['JUPYTER_RUNTIME_DIR'] = str(jupyter_path / 'runtime')
 os.environ['IPYTHONDIR'] = str(root / '.ipython')
 os.environ['PYTHONIOENCODING'] = 'utf-8'
-path = root / 'Caltech101_10_clases_ejecutado.ipynb'
+path = root / 'Caltech101_10_clases.ipynb'
 nb = nbformat.read(path, as_version=4)
 
 

@@ -1,0 +1,6 @@
+-r requirements.txt
+python-docx
+reportlab
+nbformat
+nbclient
+ipykernel

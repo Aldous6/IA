@@ -1,0 +1,448 @@
+{
+  "configuraciones_verificadas": 512,
+  "ciclos_verificados_por_configuracion": 2,
+  "acciones_sin_basura_por_ciclo": 24,
+  "avances_por_ciclo": 12,
+  "giros_por_ciclo": 12,
+  "acciones_primer_ciclo_todo_sucio": 33,
+  "ruta_de_posiciones_sin_repetir_giros": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "traza_sin_basura": [
+    {
+      "paso": 1,
+      "desde": [
+        0,
+        0
+      ],
+      "rumbo_antes": "norte",
+      "regla": "1.2",
+      "accion": "avanzar",
+      "hacia": [
+        0,
+        1
+      ],
+      "rumbo_despues": "norte",
+      "fase_despues": "ida"
+    },
+    {
+      "paso": 2,
+      "desde": [
+        0,
+        1
+      ],
+      "rumbo_antes": "norte",
+      "regla": "1.3",
+      "accion": "avanzar",
+      "hacia": [
+        0,
+        2
+      ],
+      "rumbo_despues": "norte",
+      "fase_despues": "ida"
+    },
+    {
+      "paso": 3,
+      "desde": [
+        0,
+        2
+      ],
+      "rumbo_antes": "norte",
+      "regla": "1.4",
+      "accion": "girar",
+      "hacia": [
+        0,
+        2
+      ],
+      "rumbo_despues": "este",
+      "fase_despues": "ida"
+    },
+    {
+      "paso": 4,
+      "desde": [
+        0,
+        2
+      ],
+      "rumbo_antes": "este",
+      "regla": "1.5",
+      "accion": "avanzar",
+      "hacia": [
+        1,
+        2
+      ],
+      "rumbo_despues": "este",
+      "fase_despues": "ida"
+    },
+    {
+      "paso": 5,
+      "desde": [
+        1,
+        2
+      ],
+      "rumbo_antes": "este",
+      "regla": "1.6",
+      "accion": "girar",
+      "hacia": [
+        1,
+        2
+      ],
+      "rumbo_despues": "sur",
+      "fase_despues": "ida"
+    },
+    {
+      "paso": 6,
+      "desde": [
+        1,
+        2
+      ],
+      "rumbo_antes": "sur",
+      "regla": "1.7",
+      "accion": "avanzar",
+      "hacia": [
+        1,
+        1
+      ],
+      "rumbo_despues": "sur",
+      "fase_despues": "ida"
+    },
+    {
+      "paso": 7,
+      "desde": [
+        1,
+        1
+      ],
+      "rumbo_antes": "sur",
+      "regla": "1.8",
+      "accion": "avanzar",
+      "hacia": [
+        1,
+        0
+      ],
+      "rumbo_despues": "sur",
+      "fase_despues": "ida"
+    },
+    {
+      "paso": 8,
+      "desde": [
+        1,
+        0
+      ],
+      "rumbo_antes": "sur",
+      "regla": "1.9",
+      "accion": "girar",
+      "hacia": [
+        1,
+        0
+      ],
+      "rumbo_despues": "oeste",
+      "fase_despues": "ida"
+    },
+    {
+      "paso": 9,
+      "desde": [
+        1,
+        0
+      ],
+      "rumbo_antes": "oeste",
+      "regla": "1.10",
+      "accion": "girar",
+      "hacia": [
+        1,
+        0
+      ],
+      "rumbo_despues": "norte",
+      "fase_despues": "ida"
+    },
+    {
+      "paso": 10,
+      "desde": [
+        1,
+        0
+      ],
+      "rumbo_antes": "norte",
+      "regla": "1.11",
+      "accion": "girar",
+      "hacia": [
+        1,
+        0
+      ],
+      "rumbo_despues": "este",
+      "fase_despues": "ida"
+    },
+    {
+      "paso": 11,
+      "desde": [
+        1,
+        0
+      ],
+      "rumbo_antes": "este",
+      "regla": "1.12",
+      "accion": "avanzar",
+      "hacia": [
+        2,
+        0
+      ],
+      "rumbo_despues": "este",
+      "fase_despues": "ida"
+    },
+    {
+      "paso": 12,
+      "desde": [
+        2,
+        0
+      ],
+      "rumbo_antes": "este",
+      "regla": "1.13",
+      "accion": "girar",
+      "hacia": [
+        2,
+        0
+      ],
+      "rumbo_despues": "sur",
+      "fase_despues": "ida"
+    },
+    {
+      "paso": 13,
+      "desde": [
+        2,
+        0
+      ],
+      "rumbo_antes": "sur",
+      "regla": "1.14",
+      "accion": "girar",
+      "hacia": [
+        2,
+        0
+      ],
+      "rumbo_despues": "oeste",
+      "fase_despues": "ida"
+    },
+    {
+      "paso": 14,
+      "desde": [
+        2,
+        0
+      ],
+      "rumbo_antes": "oeste",
+      "regla": "1.15",
+      "accion": "girar",
+      "hacia": [
+        2,
+        0
+      ],
+      "rumbo_despues": "norte",
+      "fase_despues": "ida"
+    },
+    {
+      "paso": 15,
+      "desde": [
+        2,
+        0
+      ],
+      "rumbo_antes": "norte",
+      "regla": "1.16",
+      "accion": "avanzar",
+      "hacia": [
+        2,
+        1
+      ],
+      "rumbo_despues": "norte",
+      "fase_despues": "ida"
+    },
+    {
+      "paso": 16,
+      "desde": [
+        2,
+        1
+      ],
+      "rumbo_antes": "norte",
+      "regla": "1.17",
+      "accion": "avanzar",
+      "hacia": [
+        2,
+        2
+      ],
+      "rumbo_despues": "norte",
+      "fase_despues": "regreso"
+    },
+    {
+      "paso": 17,
+      "desde": [
+        2,
+        2
+      ],
+      "rumbo_antes": "norte",
+      "regla": "1.18",
+      "accion": "girar",
+      "hacia": [
+        2,
+        2
+      ],
+      "rumbo_despues": "este",
+      "fase_despues": "regreso"
+    },
+    {
+      "paso": 18,
+      "desde": [
+        2,
+        2
+      ],
+      "rumbo_antes": "este",
+      "regla": "1.19",
+      "accion": "girar",
+      "hacia": [
+        2,
+        2
+      ],
+      "rumbo_despues": "sur",
+      "fase_despues": "regreso"
+    },
+    {
+      "paso": 19,
+      "desde": [
+        2,
+        2
+      ],
+      "rumbo_antes": "sur",
+      "regla": "1.20",
+      "accion": "avanzar",
+      "hacia": [
+        2,
+        1
+      ],
+      "rumbo_despues": "sur",
+      "fase_despues": "regreso"
+    },
+    {
+      "paso": 20,
+      "desde": [
+        2,
+        1
+      ],
+      "rumbo_antes": "sur",
+      "regla": "1.21",
+      "accion": "avanzar",
+      "hacia": [
+        2,
+        0
+      ],
+      "rumbo_despues": "sur",
+      "fase_despues": "regreso"
+    },
+    {
+      "paso": 21,
+      "desde": [
+        2,
+        0
+      ],
+      "rumbo_antes": "sur",
+      "regla": "1.22",
+      "accion": "girar",
+      "hacia": [
+        2,
+        0
+      ],
+      "rumbo_despues": "oeste",
+      "fase_despues": "regreso"
+    },
+    {
+      "paso": 22,
+      "desde": [
+        2,
+        0
+      ],
+      "rumbo_antes": "oeste",
+      "regla": "1.23",
+      "accion": "avanzar",
+      "hacia": [
+        1,
+        0
+      ],
+      "rumbo_despues": "oeste",
+      "fase_despues": "regreso"
+    },
+    {
+      "paso": 23,
+      "desde": [
+        1,
+        0
+      ],
+      "rumbo_antes": "oeste",
+      "regla": "1.24",
+      "accion": "avanzar",
+      "hacia": [
+        0,
+        0
+      ],
+      "rumbo_despues": "oeste",
+      "fase_despues": "regreso"
+    },
+    {
+      "paso": 24,
+      "desde": [
+        0,
+        0
+      ],
+      "rumbo_antes": "oeste",
+      "regla": "1.25",
+      "accion": "girar",
+      "hacia": [
+        0,
+        0
+      ],
+      "rumbo_despues": "norte",
+      "fase_despues": "ida"
+    }
+  ]
+}

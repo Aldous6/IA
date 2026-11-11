@@ -1,0 +1,548 @@
+PAGINA 1
+Agentes inteligentes 
+I. Introducción 
+II. Que son y como actúan? 
+III. Arquitectura 
+IV. Ambientes 
+Introducción 
+Un objeto de estudio de dichos agentes puede ser el diseñarlos para que hagan buenos trabajos y para que actúen sobre sus 
+ambientes. 
+Genéricamente: 
+-Como son los diseños internos?  
+-Como se acopla el agente  
+a su ambiente? 
+ 
+ 
+II. Que son y como actúan? 
+- 
+Un agente es cualquier cosa visualizada como que percibe su ambiente a través de sensores y actúa sobre ese 
+medio ambiente a través de efectores. 
+- 
+Son inteligentes porque buscan la optimización y, en otros casos, la aplicación de razonamiento desde un punto de 
+vista de la IA. 
+Para su actuación es necesario establecer un estándar de lo que significa éxito en un ambiente y entonces usar esto como 
+una medida de rendimiento. 
+ 
+ 
+ 
+ 
+Agente 
+Percepciones 
+Acciones 
+Ambiente 
+? 
+Sensor 
+
+
+PAGINA 2
+Ejem.: En un robot que limpia, el rendimiento podría ser 
+- 
+La cantidad de basura-polvo limpiado 
+- 
+La cantidad de electricidad gastada 
+- 
+Ruido 
+- 
+Tiempo 
+Lo anterior implica racionalidad lo cual depende de: 
+- 
+La medida de rendimiento que define el grado de éxito  
+- 
+La secuencia perceptiva: cada cosa que el agente percibe a su alrededor 
+- 
+El conocimiento del agente acerca de su ambiente 
+- 
+Las acciones que el agente puede realizar 
+ 
+Idealmente por cada posible secuencia perceptiva, un agente  debe hacer cualquier acción esperada sobre la base de la 
+evidencia proporcionada por esa secuencia perceptiva y cualquier conocimiento construido-interno que el agente tiene. 
+En consecuencia para los agentes racionales ideales se necesita definir un mapeo que describa por un lado la secuencia 
+perceptiva posible y por otro las acciones que el agente realiza por cada una de esas posibles secuencias perceptivas. 
+ 
+No es necesario crear una tabla explicita, puesto que se puede definir una especificación del mapeo sin enumerarlo 
+exhaustivamente. 
+ 
+Ejem: La función raíz cuadrada de una calculadora, con el método de Newton (dentro de un programa). 
+ 
+ 
+function SQRT(x) 
+ 
+ 
+z ← 1.0  
+/*suposición inicial*/ 
+ 
+ 
+repeat until 
+15
+2
+10
+|
+|
+
+
+x
+z
+  
+ 
+ 
+ 
+z←
+)
+2
+/(
+)
+(
+2
+x
+x
+z
+z
+
+
+ 
+ 
+ 
+end 
+ 
+ 
+return z 
+ 
+Autonomía, es otra de las características de los agentes racionales ideales. 
+En el ejemplo de un reloj, este cambiaría automáticamente si su fabricante supiera que en un tiempo específico sería 
+llevado a Australia (en este caso la inteligencia seria del fabricante y no del reloj). 
+Lo necesario en este caso es que el comportamiento del agente este basado en su experiencia propia y el conocimiento 
+inherente. 
+Entendemos entonces autónomo como: no bajo el control inmediato del humano. 
+ 
+Arquitectura 
+- 
+A través de los sensores, las percepciones se proveen al programa 
+- 
+Se ejecuta el programa 
+- 
+Según sean generadas las selecciones de las acciones, éstas se alimentan al programa para los efectores (actores) 
+correspondientes. 
+ 
+O sea, 
+ 
+ 
+Agente = Arquitectura + programa 
+ 
+ 
+Antes de hablar de ellos necesitamos saber de algunos conceptos fundamentales: 
+ 
+
+
+PAGINA 3
+ PEAS (Performance measure, Environment, Actuators, Sensors)  
+ 
+En la selección del tipo de agente: 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Más  complejos: 
+-Simulador de vuelos 747, 
+-Scanner de noticias en Internet. 
+In contrast, some software agents (or software robots or softbots) exist in rich, un-limited domains. Imagine a 
+softbot designed to fly a flight simulator for a large commercial airplane. The simulator is a very detailed, complex 
+environment including other aircraft and ground operations, and the software agent must choose from a wide variety of 
+actions in real time. Or imagine a softbot designed to scan Internet news sources and show the interesting items to its 
+customers. To do well, it will need some natural language processing abilities, it will need to learn what each customer is 
+interested in, and it will need to change its plans dynamically-for example, when the connection for one news source 
+goes down or when a new one comes online. The Internet is an environment whose complexity rivals that of the 
+physical world and whose inhabitants include many artificial agents.  
+Ambientes 
+ 
+Agent Type  
+Performance 
+Measure  
+Environment  
+Actuators  
+Sensors  
+Medical  
+Healthy patient,  
+Patient, hospital,  
+Display  
+Keyboard entry  
+diagnosis system  
+minimize costs, 
+lawsuits  
+staff  
+questions, tests, 
+diagnoses, 
+treatments, 
+referrals  
+of symptoms, 
+findings, patient's 
+answers  
+Satellite image 
+analysis system  
+Correct image 
+categorization  
+Downlink from 
+orbiting satellite  
+Display 
+categorization of 
+scene  
+Color pixel arrays  
+Part-picking robot  
+Percentage of 
+parts in correct 
+bins 
+(contenedores) 
+Conveyor belt 
+with parts; bins  
+Jointed arm and 
+hand  
+Camera, joint 
+angle sensors  
+Refinery controller  Maximize purity, 
+yield, safety  
+Refinery, 
+operators  
+Valves, pumps, 
+heaters, displays  
+Temperature, 
+pressure, chemical 
+sensors  
+Interactive  
+Maximize  
+Set of students,  
+Display  
+Keyboard entry  
+English tutor  
+student's score on 
+test  
+testing agency  
+exercises, 
+suggestions, 
+corrections  
+ 
+Figure 2.5 Examples of agent types and their PEAS descriptions.  
+
+
+PAGINA 4
+Los ambientes donde actúan y perciben los agentes pueden ser del tipo: 
+Observable completamente o parcialmente 
+Cuando los sensores del agente dan acceso al estado completo del ambiente en cada punto en el tiempo, obtienen 
+información completa, precisa y actual del ambiente, es ambiente completamente observable; esto es cuando los 
+sensores detectan todos los aspectos que son relevantes para elegir las acciones; el agente aquí no necesita tener 
+un estado interno para mantener pista del mundo. Los inaccesibles o parcialmente observables  por ejemplo serían 
+Internet y el mundo físico de cada día o por ejemplo, un robot que aspira, o el taxi automático. 
+Determinístico vs estocástico 
+Cuando el siguiente estado del ambiente está completamente determinado por el estado actual (generalmente 
+cuando el ambiente es accesible). Cualquier acción tiene un solo efecto garantizado. Aquí el mundo físico seria 
+no-determinístico, así como en caso del conductor de taxi porque no puede predecir cómo  variará el tráfico. 
+Episódico vs secuencial 
+Ambientes divididos en episodios donde cada uno tiene un agente que percibe y actúa. Un agente para sortear 
+correos toma decisiones en base al episodio actual (no dependen sus decisiones de las acciones hechas en  
+episodios previos) el agente no necesita pensar en el futuro. Un contra-ejemplo seria el ajedrez o el del taxi donde 
+el ambiente podría decirse que es secuencial porque acciones actuales pueden afectar la toma de decisiones 
+futuras. 
+Dinámico vs estático 
+Cuando un ambiente cambia en tanto se están  tomando decisiones. Ejem: el conductor de taxi en el mundo físico, 
+su ambiente cambia así (dinámicamente) ya que él y otros carros también cambian. El ambiente constantemente 
+está preguntando qué es lo quiere hacer el agente. Ajedrez (semi-dinámico cuando hay  reloj),  rompecabezas-
+estáticos. 
+Discreto vs contínuo 
+Cuando hay un número limitado de percepciones y acciones. Ejem: el ajedrez (discreto), el taxista (continuo). 
+Estrictamente hablando las entradas de una cámara son discretas, pero se trata con representaciones continuas por 
+las variaciones de intensidad y localidades. 
+Un solo agente o Multiagente 
+El caso de un agente resolviendo un crucigrama o acertijo, contrastaría al caso multiagente cuando dos agentes 
+juegan ajedrez, o el caso del taxista donde su rendimiento depende de otros agentes involucrados. 
+Tarea del ambiente       Observable       Determinístico   Episódico   Estático    Discreto      Agentes 
+Rompecabezas               Completamente   Determinístico   Secuencial   Estático     Discreto      Solo 
+Ajedrez con reloj           Completamente    Estratégico         Secuencial      Semi       Discreto      Multi 
+Poker                              Parcialmente       Estocástico         Secuencial   Estático     Discreto      Multi 
+Backgammon                Completamente    Estocástico        Secuencial   Estático     Discreto      Multi 
+
+
+PAGINA 5
+Conductor de taxi          Parcialmente        Estocástico       Secuencial    Dinámico  Continuo     Multi 
+Diagnóstico médico      Parcialmente        Estocástico       Secuencial    Dinámico   Continuo    Solo 
+Análisis de imágenes    Completamente    Determinístico  Episódico    Semi           Continuo    Solo 
+Robot que recoge partes  Parcialmente      Estocástico       Episódico    Dinámico   Continuo   Solo 
+Controlador de refinería  Parcialmente     Estocástico       Secuencial    Dinámico    Continuo  Solo 
+Tutor de inglés interactivo Parcialmente  Estocástico       Secuencial    Dinámico    Discreto   Multi 
+ 
+ 
+Estructura de agentes 
+ 
+agente = arquitectura + programa 
+Programa del agente 
+Que forma tienen? Que esqueleto? 
+ 
+function ESQUELETO-AGENTE (percepción) returns acción 
+ 
+ 
+static: memoria, la memoria del agente en el mundo 
+ 
+ 
+   memoria ← MEMORIA-ACTUAL (memoria, percepción) 
+ 
+ 
+   acción     ← ELECCIÓN-MEJOR-ACCIÓN (memoria) 
+ 
+ 
+   memoria ← MEMORIA-ACTUAL (memoria,acción) 
+ 
+ 
+return acción 
+Si solo el agente manejase una tabla: 
+ 
+function AGENTE-MANEJANDO-TABLA (percepción) returns acción 
+ 
+ 
+static: 
+percepciones, una secuencia inicialmente vacía 
+tabla, una tabla indexada por secuencias perceptivas, inicialmente especificada como 
+llena 
+ 
+ 
+ 
+agrega percepción al final de percepciones 
+ 
+ 
+ 
+acción ← LOOKUP (percepciones, tabla) 
+ 
+ 
+return acción 
+ 
+No hay eficiencia en este tipo de agentes porque por ejemplo: 
+1. Para un agente de ajedrez la tabla necesitaría como 35100 entradas. 
+
+
+PAGINA 6
+2. Se llevaría bastante  tiempo el diseño  para construir la tabla. 
+3. No habría en este caso autonomía, porque al estar enteramente construido-internamente el cálculo de la mejor 
+acción, deja sin efecto las acciones a cambios inesperados del ambiente.  
+4. Aún con el dotar al agente de cierto grado de aprendizaje, le podría llevar demasiado tiempo el aprender el valor 
+correcto de cada una de las entradas. 
+Entonces lo opuesto a un agente que usa una tabla, es un agente que razona (evitando así las desventajas anteriores). 
+Ejemplo: 
+Tipo de agente 
+Percepciones 
+Acciones 
+Objetivos-medidas 
+de rendimiento 
+Ambiente 
+Conductor de taxi 
+Cámaras, 
+velocímetro, GPS, 
+sonar, micrófono 
+Dirigir, frenar, 
+acelerar, hablar al 
+pasajero 
+Seguridad, 
+rapidez, legalidad, 
+viaje placentero, 
+maximizar 
+beneficios 
+Carreteras, otro 
+tráfico, peatones, 
+clientes 
+ 
+Para estos casos de agentes con comportamiento inteligente se sugieren 4 tipos de agentes: 
+- 
+Agentes de reflejo simple 
+- 
+Agentes que guardan pista del mundo (basados en un modelo) 
+- 
+Agentes basados en objetivos 
+- 
+Agentes basados en utilidad 
+Y después se describirá como podrían mejorar hacia 
+- 
+Agentes de aprendizaje 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+PAGINA 7
+ 
+ 
+ 
+ 
+ 
+Agentes de reflejo simple 
+Fuera de toda duda esta la opción de construir tablas de búsqueda explicita para la entrada del agente. 
+Por ejemplo, la entrada visual de una cámara (el ejemplo del agente de taxi) llega en 50 Mbytes/s. Entonces para ver la 
+cámara por una hora hay, 
+260x60x50 entradas 
+Por eso debemos apoyarnos en ocurrencias comunes de asociaciones de E/S 
+Ejem. El carro de enfrente esta frenando, entonces el agente debe iniciar el proceso de frenado. Se nota entonces el uso de 
+reglas de condición-acción. 
+ 
+ 
+If carro-frente-frenando, then inicia-frenado 
+ 
+      
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Agente de reflejo simple 
+ 
+Function AGENTE-REFLEJO-SIMPLE (percepción ) returns acción 
+ 
+ 
+static: reglas, un conjunto de reglas condición-acción 
+ 
+ 
+estado ← INTERPRETA-ENTRADA (percepción)  
+ 
+ 
+regla   ← REGLA-ACOPLA (estado, reglas) 
+ 
+ 
+acción ← REGLA-ACCIÓN (regla) 
+Agente 
+Lo que el mundo 
+parece ahora  
+Que acciones debo 
+de hacer ahora 
+Sensores 
+Efectores 
+Regla 
+Condición-acción 
+A
+M
+B
+I
+E
+N
+T
+E 
+Estado interno actual de los 
+procesos de decisión del 
+agente 
+Información de 
+fondo usada en el 
+proceso 
+
+
+PAGINA 8
+ 
+ 
+return acción 
+Son de implementación simple, pero están limitados a ambientes que sean completamente observables, ya que cualquier 
+caso no observable causaría problemas.  
+Agentes que mantienen pista del mundo (basados en un modelo) 
+Agentes como el descrito anteriormente trabajarán en decisión correcta sobre la base de la percepción actual, sin embargo 
+pueden existir distintas configuraciones para una sola acción. 
+Ejem: para el caso del auto de enfrente frenando: 
+- 
+Luces rojas 2 
+- 
+Luces rojas 3 
+- 
+No luces (viejos modelos) 
+El agente tendría que mantener una clase de estado interno para poder elegir una acción. Se tiene además que considerar el 
+hecho de cómo el mundo evoluciona, lo que hace que distintas acciones puedan ser apropiadas para ambos estados. 
+Para la actualización del estado interno, dos clases de conocimiento deben codificarse en el programa del agente: 
+1. Información de cómo evoluciona el mundo independientemente del agente. 
+Ejem: la variabilidad en distancia de un carro de atrás. 
+2. La información de cómo afectan las acciones propias del agente al mundo. 
+Ejem: al cambiar de carril, hay un hueco donde él estuvo. 
+ 
+ 
+Estructura: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+A
+M
+B 
+I 
+E
+N
+T
+E 
+Estado 
+Como evoluciona el mundo 
+Que hacen mis acciones 
+Lo que es el mundo 
+ahora 
+La acción que debo 
+hacer ahora 
+Reglas condición-acción 
+Sensores 
+Efectores 
+Agente 
+Combinación de la percepción actual y el estado 
+interno viejo con el fin de obtener la percepción 
+del estado actualizado 
+
+
+PAGINA 9
+ 
+ 
+Programa del agente reflexivo con estado interno 
+function AGENTE-REFLEXIVO-CON-ESTADO (percepción) returns acción 
+ 
+static: 
+ estado, una descripción del estado del mundo actual 
+ 
+ 
+ 
+reglas, un conjunto de reglas condición-acción 
+ 
+estado ← ACTUALIZA-ESTADO (estado, percepción) 
+ 
+regla 
+← REGLA-ACOPLA (estado, reglas) 
+ 
+acción ← REGLA-ACCIÓN (regla) 
+ 
+estado ← ACTUALIZA-ESTADO (estado, acción) 
+return acción 
+La función ACTUALIZA-ESTADO es la responsable de crear la nueva descripción del estado interno, interpreta la nueva 
+percepción en base al conocimiento existente acerca del estado. Usa la información de cómo cambia el mundo, 
+manteniendo pista de las partes no vistas en el. 
+Cuando se relaciona con la acción, debe saber acerca de las acciones que el agente hace al estado del mundo. 
+Tarea 2 (ejercicio 2.9) 
+ 
+2.9 Implement a simple reflex agent for the vacuum environment in Exercise 2.8. Run 
+the environment simulator with this agent for all possible initial dirt configurations and agent 
+locations. Record the agent's performance score for each configuration and its overall1 average 
+score. 
+ 
+ 

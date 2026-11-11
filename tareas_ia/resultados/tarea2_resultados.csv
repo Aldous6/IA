@@ -1,0 +1,9 @@
+inicio,A_inicial,B_inicial,puntaje_antes,puntaje_despues,paso_limpieza_completa,primeras_acciones
+A,limpia,limpia,2000,2000,0,"derecha, izquierda, derecha, izquierda, derecha, izquierda"
+B,limpia,limpia,2000,2000,0,"izquierda, derecha, izquierda, derecha, izquierda, derecha"
+A,limpia,sucia,1998,1999,2,"derecha, aspirar, izquierda, derecha, izquierda, derecha"
+B,limpia,sucia,1999,2000,1,"aspirar, izquierda, derecha, izquierda, derecha, izquierda"
+A,sucia,limpia,1999,2000,1,"aspirar, derecha, izquierda, derecha, izquierda, derecha"
+B,sucia,limpia,1998,1999,2,"izquierda, aspirar, derecha, izquierda, derecha, izquierda"
+A,sucia,sucia,1996,1998,3,"aspirar, derecha, aspirar, izquierda, derecha, izquierda"
+B,sucia,sucia,1996,1998,3,"aspirar, izquierda, aspirar, derecha, izquierda, derecha"

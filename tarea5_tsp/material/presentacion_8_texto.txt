@@ -1,0 +1,275 @@
+Click to edit Master title style
+Click to edit Master text stylesSecond levelThird levelFourth levelFifth level
+*
+Click to edit Master text stylesSecond levelThird levelFourth levelFifth level
+*
+Búsqueda heurística La búsqueda heurística se refiere a espacios discretos de soluciones e incluye soluciones exactas. El modelo del problema es: Dadosun espacio (conjunto) discreto S (conteniendo los estados de resolución),un conjunto finito T de operadores t: S  S,un estado inicial s0  S, una condición b: S  {TRUE, FALSE} para la metay una función de costos  (para un paso) c: S  S  + (números reales positivos). En el caso de un problema de restricción la solución x esta determinada por b(x) = TRUE. En el caso de problemas de optimización existe una función fopt : S  +. Eventualmente hay heurísticas para definir la función c de costos por medio de la función  fopt de la optimización.Hay problemas para los cuales la suma de los costos c(n, n’) del camino de s0 a la solución  s es fopt(s).Los métodos no informados no usan una función de costos con información sobre el problema concreto.Un modelo equivalente es el modelo de grafos de la búsqueda: G = (S, E) con lo cuallos nodos (vértices) son los elementos del espacio,las aristas (E) conectan elementos s, t(s) con t  T,existe un nodo inicial s0  S,existe una condición b: S  {TRUE, FALSE} para la metay existe una función de costos  c: E  +. El camino de la resolución es representado por la senda que empieza en s y termina en la solución x.Para la descripción de los métodos de  búsqueda se usan las nociones siguientes:generar un nodo n: calcularlo y almacenarlo un una lista,sucesores n’ de un nodo n: los nodos n’, que en un proceso de búsqueda son generados por la aplicación n’ = t(n) de un operador a n.explorar un nodo n: generar por lo menos un hijo n’ de n,expandir un nodo n: generar todos sus hijos n’. La mayoría de los métodos usa dos listas:la lista OPEN de todos los nodos generados y no expandidosy otra lista CLOSED de todos los nodos expandidos
+*
+*
+El algoritmo siguiente es la base de algunos algoritmos más especializados: Algoritmo GRAPHSEARCH1. Crea el grafo G que solo existe del nodo inicial s. Construye una lista OPEN = (s).2. Construye una lista CLOSED = ( ).3. Si OPEN es vacía, termina con fracaso.4. Selecciona el primer nodo n de OPEN, omítelo en OPEN y ponlo en CLOSED.5. Si n es una solución, termina con éxito y entrega la serie de apuntadores de n a s.6. Produce en G los  sucesores n’ de n (expansión de n).7. Establece apuntadores de los sucesores n’ de n a n mismo.     Si hay sucesores que ya existen en G, es decir en OPEN o en CLOSED, decide entre la omisión de la     nueva ocurrencia y de la anterior. Escribe las sucesores n’ en la lista OPEN.8. Ordena la lista OPEN usando una heurística.9. Continúa con 3. El algoritmo produce un árbol con s como raíz. El tamaño del árbol depende de la heurística aplicada. Consideramos casos especiales:
+*
+Búsqueda en anchura o a lo anchoSe ponen los sucesores en el orden de su generación en las últimas posiciones de la lista.  Ejemplo:		s   	                    OPEN = (s), CLOSED = ( )  		s		OPEN = (s1, s2, s3, s4),  CLOSED = (s)              s1      s2        s3         s4 		s		OPEN = (s2, s3, s4, s5, s6, s7),  CLOSED = (s, s1)				después:  OPEN = (s3, s4, s5, s6, s7, s8, s9),					    CLOSED = (s, s1, s2)           s1     s2         s3        s4        s5      s6     s7       s8      s9  				después: continuar con s3 Es completa		Si es que hay una soluciónEs óptima		Si el costo de la trayectoria es una función no decreciente	.No siempre es elegida debido a la cantidad de tiempo y memoria necesitados 
+*
+Si el factor de ramificación	es b entonces:La raiz genera b y cada uno de los siguientes nodos genera otros b y asi…entoncesNumero máximo de nodos =  		antes de encontrar la solución.Es un desafío para lo analistas de la teoría de la complejidad porque hay problemas que pudiesen requerir niveles grandes de profundidad en la búsqueda de la solución.Ejem:Si b = 10Y CPU expande 1000/s, y si vamos a una profundidad 12.Y cada nodo necesita 100 bytes,	entonces,  Nodos = 	Tiempo = 35 años, 	Memoria = 111 TBBúsqueda de costo-uniformeSe expande el nodo de más bajo costo sobre la franja (se marcan los costos de cada operación) y si se llega al objetivo, este todavía no se toma como tal porque puede haber menores costos en los nodos siguientes.
+A
+S
+S
+B
+C
+5
+1
+11
+15
+15
+5
+10
+G
+G
+G
+A              B             C
+S
+S
+11
+15
+B
+S
+1
+C
+A
+G
+5
+10
+5
+5
+15
+*
+Búsqueda a profundidad: En el paso 8 del algoritmo GRAPHSEARCH se ordena la lista OPEN por poner los sucesores en el orden de su generación en las posiciones primeras de la lista.Se expande uno de sus nodos al nivel más profundo del árbolSi llega  aun punto muerto, se regresa y expande a los de arriba inmediatos.Requerimientos modestos de memoria desde la raíz a un nodo hoja + los nodos remanentes no expandidosSi la ramificación es:b y la profundidad m, requeriría almacenar bm nodos en lugar deBajo el mismo ejemplo del caso anterior (a lo-ancho):- Requeriría memoria = 12 KB   (10x12= 120 nodos y cada nodo requiere 100bytes)Complejidad en tiempo = Se prefiere en problemas con muchas soluciones por la rapidez al explorar solo una parte del espacio.Desventajas:- Muchos problemas son muy profundos o aún de búsqueda infinita  Si acaso hay una solución , esta puede no ser la óptima, entonces… No es óptimo.No es método completo 
+*
+Profundidad 
+*
+Algoritmo:Poner el nodo inicial en OPENSi OPEN vacío entonces falla.Quita primer nodo de OPEN y ponlo en CLOSED, llámalo nSi n= l (limite), limpie CLOSED y vaya a 2.Expanda n, generando sus sucesores, póngalos encima de OPEN y ponga en cada uno apuntadores	de regreso a n.6. Si cualquiera de esos sucesores = nodo objetivo, entonces salir con solución obtenida retrocediendo	a través de sus apuntadores.7. Si cualquiera de esos sucesores es nodo muerto, quítelo de OPEN y limpie CLOSED.6. Ir al paso 2.Búsqueda a profundidad limitadaEvita los problemas del método anterior al imponerse aquí un corte.Se garantiza la solución si ella existe.Es completo, pero no óptimoComplejidad en tiempo Complejidad en memoria blCuando el límite se excede entonces “backtracking”
+*
+Ejemplo:			s,                OPEN = (s), CLOSED = ( )  			s	OPEN = (s1, s2, s3, s4),  CLOSED = (s)              s1      s2        s3         s4 			s	OPEN = (s5, s6, s7, s2, s3, s4),  CLOSED = (s, s1)				después:  OPEN = (s8, s9, s10, s6, s7,  s2, s3, s4), 					    CLOSED = (s, s1, s5)            s1       s2         s3        s4        s5       s6          s7  				después: continuar con s8   s8        s9         s10  En este método el gráfico es desarrollado a la profundidad. Prácticamente se necesita una limitación a profundidad.
+*
+Búsqueda de profundidad IterativaEn el caso de profundidad limitada el problema es elegir un buen límite. Sin embargo en muchos problemas no seconoce el límite hasta que se ha resuelto el problema.En la búsqueda de profundidad iterativa:Se trata con todos los niveles posibles como límites, o sea: 	0, 1, 2, ….Combina los beneficios de:  primero-a-lo-ancho y primero-a-profundidadEl método es óptimo y completo. Tiene los requerimientos de memoria de primero a profundidad, y la expansión es similar a primero a lo ancho, excepto que aquí algunos estados son expandidos múltiples veces.Ejemplo, con cuatro iteraciones:
+Límite 0
+Límite 1
+Límite 2
+Límite 3
+*
+Puede parecer que es un desperdicio el que muchos estados se exploran múltiples veces. pero para muchos problemaseste “overhead” de expansión múltiple, es pequeño.La razón es que en una búsqueda exponencial, todos los nodos (la mayoría están muy abajo y entonces no importa cuanto  se expandan los niveles de más arriba).El número total de expansiones es:Ejemplo: para b=10 y d=5           	          6 + 50 + 400 + 3000 + 20,000 + 100,000No. de expansiones = 123,456- La complejidad en tiempo = - La complejidad en espacio = bd- Es óptimo- Es completoEste método se prefiere cuando hay un espacio grande de búsqueda y la profundidad de la solución se desconoce
+*
+Búsqueda bidireccionalEste tipo de búsqueda se ejecuta en forma simultánea, hacia adelante desde el nodo de inicio y hacia atrás desde elobjetivo.Se para cuando los dos procesos se encuentran  en medio .La solución se encontraría en: 			(puesto que se supone que cada paso implica el ramificar dos veces).Si b = 10, 	d = 6 La búsqueda primero a lo ancho genera 	1,111,111 nodos.La búsqueda bidireccional generará, con d=3,	2,222 nodos para alcanzar el éxito.Pero para implementar el algoritmo se deben considerar ciertas cosas:
+G
+S
+*
+ Generación de antecesores desde el objetivo Estados múltiples antes del objetivo (ejem: los que llevan a un jaque mate) Mecanismos para saber si un nodo nuevo ya está en la otra mitad buscadora. Decidir la clase de búsqueda,Comparación de estrategias:
+CRITERIO
+A LO ANCHO
+COSTO UNIFORME
+A-PROFUNDIDAD
+PROFUNDIDAD LIMITADA
+PROFUNDIDAD INTERATIVA
+BIDIRECCIONAL
+TIEMPOESPACIOÓPTIMOCOMPLETO
+SiSi
+SiSi
+bmNoNo
+blNoSi, si l >= d
+bdSiSi
+Sisi
+*
+Busquedas InformadasEl algoritmo BF* (BestFirst)    Este algoritmo aplica en el paso 8 del algoritmo GRAPHSEARCH  (Ordena la lista OPEN usando una heurística.) una función f(n) al nodo n y la lista OPEN es ordenada con los mejores valores al comienzo de la lista. Se considera f(n) como estimación para el valor fopt(x) de una solución x que se alcanza vía el nodo n. El algoritmo A* El algoritmo A* es una especialización de BF*. Se calcula la función f(n) por f(n) = g(n) + h(n):g(n) es la suma de costos (x, x’) para el camino de s0 a n.h(n) es una estimación para la suma de los costos del resto del camino a la solución.Si h*(n) (la óptima real) denota la suma de estos costos y para la estimación vale 0  h(n)  h*(n), entonces el algoritmo garantiza que encuentra la solución con costos mínimos.
+*
+s
+c1
+c2
+c3
+c4
+n
+Solución
+h(n)
+g(n) = c1 + c2 + c3 + c4 
+h*(n)
+Si la función h(n) satisface la condición 0≤h(n)≤h*(n), se le llama al algoritmo A* , admisible
+Gráficamente:
+*
+Ejemplo: El camino más corto desde San Diego a San Felipe.Una heurística es usar la distancia en línea recta (DLR)
+SD ----- 250TJ  ----- 240EN ----- 190TE ----- 200MX ---- 186SF ----- 0
+SD
+TJ
+EN
+SF
+MX
+TE
+SD
+TJ
+TE
+SD
+TJ
+TE
+TE
+EN
+MX
+SD
+TJ
+TE
+TJ
+SD
+EN
+MX
+SF
+h= 200
+h= 186
+h= 200
+h= 240
+h= 250
+h= 190
+h= 240
+h= 0
+Usando BUSQUEDA VORAZ(Greedy Best First Search)
+*
+SD
+TJ
+EN
+SF
+MX
+TE
+SD
+TJ
+TE
+70
+80
+80
+180
+220
+200
+112
+110
+SD
+TJ
+TE
+TJ
+SD
+EN
+MX
+f = 70+240
+f = 80+200
+f=160+250f=410
+f=280+186f=466
+f=160+240f=400
+f=192+190f=382
+SD
+TJ
+TE
+MX
+112
+EN
+f=302+240
+f=412+0
+f=304+200
+SF
+TE
+TJ
+Ahora con A* :
+112
+80
+80
+70
+200
+80
+110
+220
+112
+80
+70
+80
+f(n) = g(n) + h(n)
+*
+Los métodos clásicos de optimización pueden ser muy efectivos cuando son apropiados para la tarea en cuestión. Vale la pena saber cuándo y cuándo no, usar cada uno. En términos generales, se dividen en dos clases distintas:• Algorithms that only evaluate complete solutions .(cuando todas las variables de decisión son especificadas, cadenas o –vectores- de longitude n, SAT, TSP, etc.)• Algorithms that require the evaluation of partially constructed or approximatesolutions .Partial solutions , on the other hand, come in two forms : ( 1 ) an incompletesolution to the problem originally posed, and (2) a complete solution to a reduced (i.e. , simpler) problem. (Métodos de aproximación)Incomplete solutions reside in a subset of the original problem's search space.For example, in an SAT , we might consider all of the binary strings where thefirst two variables were assigned the value 1 (i.e. , TRUE). Or in the TSP, wemight consider every permutation of cities that contains the sequence 7 - 1 1 -2 - 1 6 .Esto correspondería al inciso c) de la clasificación posterior (lámina 20)
+*
+They either process complete solutions in their entirety, or they constructthe final solution from smaller building blocks .Greedy algorithms , for example,successively build solutions according to maximizing locally available improvements.En relación a los métodos de descomposición :     inciso b) de la siguiente láminaprocedure D&C (P) begin   split the problem P into subproblems P1 , . . . , Pk   for i = 1 to k do      if size(Pi) < p then solve Pi (getting si)                             else si  D&C (Pi )    combine si's into the final solution.EndFig. 4 . 2 . Divide and conquer recursive procedure for solving problem P
+*
+Heurísticas modernasMétodos constructivosMétodos de descomposiciónMétodos de manipulación (reducción o modificación) del modeloMétodos de búsqueda por entornosDentro de estos últimos (inciso d) hemos dicho que hay soluciones factibles  dentro del entorno de una solución.Esto es:		s = solución			N(s) = Conjunto de soluciones parecidas a s que están en su vecindadY obtenemos	s’       N(s)	a partir de la solución s mediante una modificación o movimiento sobre s			(agregar, borrar, intercambiar, etc)Ejem:	si	s = <1,0,0,1,1>	donde xi indica que el elemento i está seleccionadoY si cambiamos a 	s’ = <0,0,1,1,1>	sería un elemento perteneciente a N(s)Buscan al elemento (dentro de N(s)) que tenga el mejor valor de acuerdo a algún criterio predefinidoSe mueven hacia él y repiten la operación, hasta que se considera que no es posible hallar otra solución (cuando no hay más elementos en N(s) o ocurre un criterio de alto).
+s
+N(s)
+S
+*
+Ocurre entonces que una solución  s es un óptimo local si		           y el c(s) < c(s’)	si se trata de minimizar costosHay problemas entonces si a lo largo de la búsqueda se cae en un óptimo local y ahí se queda atorada la Búsqueda. Para salvar esto hay que reiniciar la búsqueda y confiar que ésta ocasión se siga por otras rutas	
+Solución inicial
+Óptimo local
+xi 
+xi+1 
+xi -1
+Función con un óptimo local,	N(xi ) = { xi-1, xi+1 } 
+*
+Hill-Climbing- El escalador desea alcanzar el pico lo más rápidamente posible, eligiendo   para ello la dirección más abrupta.- Se basa en un mejoramiento gradual por monitoreo.- Se aplica a un solo punto en el espacio de búsqueda- Durante cada iteración se selecciona un nuevo punto desde la vecindad del punto en curso- Termina en un óptimo local.- Y para escapar de ello, se da un “refresh” y se empieza con un nuevo nodo.- Los valores del óptimo local solo dependen del punto de inicioAlgoritmoProcedimiento hill-climbing iteradobegin	t ← 0	inicializa best	repeat		local ← FALSE		selecciona un punto corriente Vc al azar		evalúa Vc 		repeat			selecciona todos los nuevos puntos en la vecindad de Vc			selecciona el punto Vn del conjunto de nuevos puntos con 			el mejor valor de función de evaluación eval						if eval(Vn) es mejor que eval (Vc)				then Vc ← Vn				else local ←TRUE		until local				t ← t + 1			if Vc es mejor que best				then best ← Vc	until t = MAXend
+*
+Debilidades Usualmente solo termina en soluciones que son óptimos locales No hay información como para saber la cantidad por la cual el óptimo local se desvía del óptimo global El óptimo que se obtiene depende de la configuración inicial En general no es posible poner un acotamiento superior para el tiempo de computación Descuida el explorar grandes porciones del espacio de búsqueda Picos secundarios, mesetas entre picosVentajas Fácil de aplicar, se necesita solo:	- La representación	- La función de evaluación (Ejem: Distancias Manhatan)	- La medida que define a los vecinos que están en alrededor de una solución dada 
+*
+Escape de Óptimos LocalesEn relación a las estrategias tradicionales, algunas garantizan encontrar la solución global (son completas) y otras no.Las que garantizan una solución global suelen ser demasiado costosas (tiempo y memoria) para solucionar problemas típicos de la vida real. Otras tienen la tendencia de quedar en óptimos locales.No hay algoritmos que garanticen una solución global en tiempo polinomial para problemas NP-duros.Existen alternativas para escapar de esos óptimos locales, en una sola corrida.Hay métodos importantes:	- Templado Simulado (Simulated Annealing)	- Búsqueda Tabú (Tabu Search)Otro método revolucionario que no solamente podria procesar una sola solución (en la búsqueda del óptimo globlal), sino toda una población de soluciones, es el de los algoritmos Evolutivos.
+*
+Para ver algunas diferencias entre el templado simulado y el Hill-climbing, simplificamoseste último algoritmo y dejamos MAX=1 (una sola secuencia de iteraciones de mejoramiento)Entonces, Hill-climbing:procedure busqueda localbegin       x = algún punto de inicio en S       while mejor (x) ≠ “no” do         (mientras haya mejoría)                x = mejor (x)         regresa (x)endEl subprocedimiento mejor(x) regresa un punto nuevo y desde la vecindad de x, o seay є N(x), y es mejor que x, de otra manera regresa una cadena “no”, en ese caso x es unóptimo local en S.Templado Simulado:Procedimiento 				begin					x = algún punto de inicio en S					whilenot condicion de terminación do						x = mejor? (x, T)						actualiza (T)					regresa (x)				end
+*
+Hay tres diferencias importantes del Templado Simulado con Hill-Climbing:1º. Como se detiene el procedimiento     El templado simulado se ejecuta hasta que se satisface una “condición de terminación” externa.     En el Hill-Climbing hasta que no hay más mejoramiento.2º. La función mejor?(x, T) no tiene que regresar un punto mejor (por eso es el signo “?”), solo regresa una       solución aceptada y desde la vecindad de x. Tal aceptación esta basada sobre la temperatura actual T.3º. El parámetro T se actualiza periódicamente, y este valor tiene influencia en el resultado del procedimiento      mejor?.      Esta característica no aparece en la búsqueda local.Note que el lazo interno del algoritmo dado inicialmente en la  lámina anterior (Hill-Climbing) regresa siempre un óptimo local, y este procedimiento solo escapa de él iniciando una nueva búsqueda (lazo externo) desde una nueva localidad (aleatoria).Hay MAX intentos y la solución best es regresada como el resultado final del algoritmo.Si se modifica dicho algoritmo de la siguiente manera:En lugar de verificar todas la cadenas en la vecindad de un punto actual vc  y seleccionar el mejor,   seleccionamos solamente un punto vn de esta vecindad.Aceptamos este nuevo punto, ejemplo vc ← vn  , con alguna probabilidad que depende del mérito relativo  de esos puntos. Ejemplo: la diferencia de los valores regresados por la función de evaluación para esos  dos puntos.Entonces se le llama: Hill-Climbing estocástico.
+*
+Y el algoritmo para ello es:procedure	hill-climbing estocásticobegin	t ← 0	seleccionar una cadena vc al azar	evaluar vc 	repeat		seleccionar la cadena vn desde la vecindad de vc 				seleccionar vn con probabilidad                            		t ← t + 1	until  t = MAXendEste algoritmo se basa en la probabilidad de aceptación del punto vn . Dicha probabilidad involucra:			para maximización. Pero si se quiere minimizar, entonces se 			cambian los términos de la resta.Cual es el papel de T?Si fuesen:		eval(vc ) = 107	y	eval(vn ) = 120La diferencia es :	-13 y ello indica que el punto vn  es mejor que el vc .	
+*
+Que probabilidad hay de aceptar este nuevo punto basado en valores distintos de T?Se ve que si T es muy grande la probabilidad se aproxima  a 0.5 y eso volvería a la búsqueda, aleatoria.Si T es muy pequeño, el procedimiento tiende a ser Hill-Climbing ordinario.Otra perspectiva es suponer constante la temperatura T y la evaluación de vc o sea:T = 10eval(vc ) = 107Entonces la probabilidad de aceptación dependería solo de el nuevo vn .
+             T
+             p
+1
+0.000002
+1.0
+5
+0.0743
+0.93
+10
+0.2725
+0.78
+20
+0.52
+0.66
+50
+0.77
+0.56
+10
+0.9999…
+0.5
+*
+Ello entonces se vería como:Se ve aquí que cuando eval(vc ) = eval(vn ), la probabilidad es 0.5 lo cual es razonable porque cada una tiene la misma calidad  .Si el nuevo punto es mejor, la probabilidad es mayor que 0.5.La diferencia del Hill-Climbing estocástico y el Templado Simulado, es que éste último cambia el parámetro Tdurante la corrida. Inicia con valores altos de T (y con ello se vería similar a la búsqueda aleatoria pura), ydespués gradualmente disminuye el valor de T.
+eval(vn )  
+eval(vc  )-eval(vn )
+p
+80
+27
+14.88
+0.06
+100
+7
+2.01
+0.33
+107
+0
+1.00
+0.50
+120
+-13
+0.27
+0.78
+150
+143
+0.01
+0.99
+107-80 = 27
+*
+El algoritmo sería:procedure	 templado simuladobegin	t ← 0	inicializar T	seleccionar un punto actual vc aleatoriamente	evaluar vc 	repeat		repeat			seleccionar un punto nuevo vn en la vecindad de vc 			if    eval(vc ) < eval(vn )			then   vc ← vn 			else   if   random [0,1) <			          then     vc  ←  vn 		until (condición de terminación)		T ← g(T, t)		t  ←  t +1	until (criterio de alto)end
+*
+El templado simulado se puede determinar desde una analogía de un sistema físico y un problema de optimización.La temperatura T se debe inicializar antes de ejecutar el procedimiento. Ejem: T = 100, 1000, etcDebemos elegir una condición de terminación después de la cual la temperatura es decrementada y el  procedimiento de enfriamiento se reitera.Ejecutar algún número de iteraciones o usar algún otro criterio.Porqué factor la temperatura debe ser decrementada? (por uno por ciento o menos).
+Sistema Físico
+Problema de optimización
+EstadoEnergíaEstado baseExtinción rápidaTemperaturaTemple cuidadoso
+Solución factibleFunción de evaluaciónSolución óptimaBúsqueda localParámetro de control TTemplado simulado
+*
+TAREA 5Aplicar el Templado Simulado al problema del TSP considerando 15 ciudades.Como entorno definir la permutación obtenida al intercambiar dos elementos de vc  por lo que se pueden elegir las ciudades i y j aleatoriamente, e intercambiar su posición en vc  y obtener vn . .Tener en cuenta que entonces aquí el problema es de minimización por lo que habría que intercambiarlos términos de la resta en el exponente de e, de la expresión de la probabilidad p de la lámina 27
+*

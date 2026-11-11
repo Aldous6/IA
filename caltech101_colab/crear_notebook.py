@@ -509,8 +509,8 @@ print('Notebook terminado sin celdas de error.')
 nb = nbf.v4.new_notebook(cells=cells, metadata={
     'kernelspec': {'display_name': 'Python 3', 'language': 'python', 'name': 'python3'},
     'language_info': {'name': 'python', 'version': '3.12'},
-    'colab': {'name': 'Caltech101_10_clases_ejecutado.ipynb', 'provenance': []},
+    'colab': {'name': 'Caltech101_10_clases.ipynb', 'provenance': []},
 })
-path = ROOT / 'Caltech101_10_clases_ejecutado.ipynb'
+path = ROOT / 'Caltech101_10_clases.ipynb'
 nbf.write(nb, path)
 print(f'Creado {path.name}: {len(cells)} celdas.')

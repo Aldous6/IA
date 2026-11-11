@@ -1,0 +1,380 @@
+{
+  "reglas": [
+    {
+      "id": "R1",
+      "si": [
+        "p",
+        "q"
+      ],
+      "entonces": [
+        "objetivo"
+      ]
+    },
+    {
+      "id": "R2",
+      "si": [
+        "r",
+        "s"
+      ],
+      "entonces": [
+        "p"
+      ]
+    },
+    {
+      "id": "R3",
+      "si": [
+        "w",
+        "r"
+      ],
+      "entonces": [
+        "q"
+      ]
+    },
+    {
+      "id": "R4",
+      "si": [
+        "t",
+        "u"
+      ],
+      "entonces": [
+        "q"
+      ]
+    },
+    {
+      "id": "R5",
+      "si": [
+        "v"
+      ],
+      "entonces": [
+        "s"
+      ]
+    },
+    {
+      "id": "R6",
+      "si": [
+        "Inicio"
+      ],
+      "entonces": [
+        "v",
+        "r",
+        "q"
+      ]
+    }
+  ],
+  "mt_inicial": [
+    "Inicio"
+  ],
+  "meta": "objetivo",
+  "adelante": {
+    "exito": true,
+    "mt": [
+      "Inicio",
+      "v",
+      "r",
+      "q",
+      "s",
+      "p",
+      "objetivo"
+    ],
+    "traza": [
+      {
+        "paso": 1,
+        "mt_antes": [
+          "Inicio"
+        ],
+        "reglas_revisadas": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6"
+        ],
+        "regla": "R6",
+        "nuevos": [
+          "v",
+          "r",
+          "q"
+        ],
+        "mt_despues": [
+          "Inicio",
+          "v",
+          "r",
+          "q"
+        ]
+      },
+      {
+        "paso": 2,
+        "mt_antes": [
+          "Inicio",
+          "v",
+          "r",
+          "q"
+        ],
+        "reglas_revisadas": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5"
+        ],
+        "regla": "R5",
+        "nuevos": [
+          "s"
+        ],
+        "mt_despues": [
+          "Inicio",
+          "v",
+          "r",
+          "q",
+          "s"
+        ]
+      },
+      {
+        "paso": 3,
+        "mt_antes": [
+          "Inicio",
+          "v",
+          "r",
+          "q",
+          "s"
+        ],
+        "reglas_revisadas": [
+          "R1",
+          "R2"
+        ],
+        "regla": "R2",
+        "nuevos": [
+          "p"
+        ],
+        "mt_despues": [
+          "Inicio",
+          "v",
+          "r",
+          "q",
+          "s",
+          "p"
+        ]
+      },
+      {
+        "paso": 4,
+        "mt_antes": [
+          "Inicio",
+          "v",
+          "r",
+          "q",
+          "s",
+          "p"
+        ],
+        "reglas_revisadas": [
+          "R1"
+        ],
+        "regla": "R1",
+        "nuevos": [
+          "objetivo"
+        ],
+        "mt_despues": [
+          "Inicio",
+          "v",
+          "r",
+          "q",
+          "s",
+          "p",
+          "objetivo"
+        ]
+      }
+    ],
+    "disparadas": [
+      "R6",
+      "R5",
+      "R2",
+      "R1"
+    ],
+    "inspecciones": 14
+  },
+  "atras": {
+    "exito": true,
+    "mt": [
+      "Inicio",
+      "v",
+      "r",
+      "q",
+      "s",
+      "p",
+      "objetivo"
+    ],
+    "traza": [
+      {
+        "tipo": "seleccion",
+        "meta": "objetivo",
+        "regla": "R1",
+        "submetas": [
+          "p",
+          "q"
+        ],
+        "mt": [
+          "Inicio"
+        ]
+      },
+      {
+        "tipo": "seleccion",
+        "meta": "p",
+        "regla": "R2",
+        "submetas": [
+          "r",
+          "s"
+        ],
+        "mt": [
+          "Inicio"
+        ]
+      },
+      {
+        "tipo": "seleccion",
+        "meta": "r",
+        "regla": "R6",
+        "submetas": [
+          "Inicio"
+        ],
+        "mt": [
+          "Inicio"
+        ]
+      },
+      {
+        "tipo": "hecho",
+        "meta": "Inicio",
+        "mt": [
+          "Inicio"
+        ]
+      },
+      {
+        "tipo": "disparo",
+        "meta": "r",
+        "regla": "R6",
+        "nuevos": [
+          "v",
+          "r",
+          "q"
+        ],
+        "mt": [
+          "Inicio",
+          "v",
+          "r",
+          "q"
+        ]
+      },
+      {
+        "tipo": "seleccion",
+        "meta": "s",
+        "regla": "R5",
+        "submetas": [
+          "v"
+        ],
+        "mt": [
+          "Inicio",
+          "v",
+          "r",
+          "q"
+        ]
+      },
+      {
+        "tipo": "hecho",
+        "meta": "v",
+        "mt": [
+          "Inicio",
+          "v",
+          "r",
+          "q"
+        ]
+      },
+      {
+        "tipo": "disparo",
+        "meta": "s",
+        "regla": "R5",
+        "nuevos": [
+          "s"
+        ],
+        "mt": [
+          "Inicio",
+          "v",
+          "r",
+          "q",
+          "s"
+        ]
+      },
+      {
+        "tipo": "disparo",
+        "meta": "p",
+        "regla": "R2",
+        "nuevos": [
+          "p"
+        ],
+        "mt": [
+          "Inicio",
+          "v",
+          "r",
+          "q",
+          "s",
+          "p"
+        ]
+      },
+      {
+        "tipo": "hecho",
+        "meta": "q",
+        "mt": [
+          "Inicio",
+          "v",
+          "r",
+          "q",
+          "s",
+          "p"
+        ]
+      },
+      {
+        "tipo": "disparo",
+        "meta": "objetivo",
+        "regla": "R1",
+        "nuevos": [
+          "objetivo"
+        ],
+        "mt": [
+          "Inicio",
+          "v",
+          "r",
+          "q",
+          "s",
+          "p",
+          "objetivo"
+        ]
+      }
+    ],
+    "seleccionadas": [
+      "R1",
+      "R2",
+      "R6",
+      "R5"
+    ],
+    "disparadas": [
+      "R6",
+      "R5",
+      "R2",
+      "R1"
+    ],
+    "consultas_mt": [
+      "objetivo",
+      "p",
+      "r",
+      "Inicio",
+      "s",
+      "v",
+      "q"
+    ],
+    "inspecciones": 14
+  },
+  "metricas": {
+    "disparos_adelante": 4,
+    "disparos_atras": 4,
+    "inspecciones_adelante": 14,
+    "inspecciones_atras": 14,
+    "hechos_nuevos_ambos": 6
+  }
+}

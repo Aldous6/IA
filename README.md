@@ -1,13 +1,23 @@
-Clasificación de diez categorías de [Caltech 101](https://data.caltech.edu/records/mzrjq-6wc02) con una CNN básica entrenada desde cero y MobileNetV2 preentrenada en ImageNet, adaptada mediante transferencia de aprendizaje y ajuste fino.
+# Inteligencia artificial
 
-[Abrir el notebook en Google Colab](https://colab.research.google.com/github/Aldous6/IA/blob/main/Caltech101_10_clases_ejecutado.ipynb). El archivo conserva la ejecución completa en CPU, las explicaciones, las curvas de aprendizaje y las matrices de confusión de ambas redes. No necesitas volver a entrenar para consultar sus resultados. Para repetir el experimento, selecciona **Entorno de ejecución → Ejecutar todas**; la primera ejecución descarga las imágenes y los pesos necesarios.
+Prácticas, tareas, código, notebooks, documentos de entrega y resultados del trabajo local.
 
-Se eligieron las clases `airplanes`, `Motorbikes`, `bonsai`, `brain`, `butterfly`, `chandelier`, `ketch`, `Leopards`, `revolver` y `sunflower`. Se utilizaron 80 imágenes únicas por clase, con semilla 42: 480 para entrenamiento, 160 para validación y 160 para prueba. Ambas redes usaron las mismas particiones; el conjunto de prueba se reservó para la evaluación final.
+## Contenido
 
-La CNN acertó 131 de 160 imágenes de prueba, con exactitud de 81.88 % y F1 macro de 0.8172. MobileNetV2 acertó 160 de 160, con exactitud de 100 % y F1 macro de 1.0000. Estas cifras corresponden a esta selección y partición; no garantizan el mismo desempeño en otras imágenes. La comparación utiliza arquitecturas distintas y no aísla el efecto del preentrenamiento.
+| Carpeta | Contenido |
+| --- | --- |
+| [caltech101_colab](caltech101_colab/) | Clasificación de imágenes con CNN y MobileNetV2, modelos y resultados. |
+| [rgb_colab](rgb_colab/) | Separación de canales RGB y notebook de la práctica. |
+| [tareas_ia](tareas_ia/) | Tareas 1, 2 y 3: investigaciones, agente aspiradora y reglas. |
+| [tarea4_busqueda](tarea4_busqueda/) | Ejercicios de búsqueda y sus entregas. |
+| [tarea5_tsp](tarea5_tsp/) | Problema del viajante con templado simulado. |
+| [tarea6_tabu](tarea6_tabu/) | Búsqueda tabú y comparación con templado simulado. |
+| [tarea7_producciones](tarea7_producciones/) | Sistemas de producción y trazas de razonamiento. |
+| [tarea8_logica](tarea8_logica/) | Lógica de primer orden y documentos de entrega. |
+| [presentaciones](presentaciones/) | Material de clase. |
 
-![Matrices de confusión de las dos redes](resultados/matrices_conteos.png)
+Cada práctica conserva sus archivos de trabajo, entregas y resultados en su carpeta. Las dependencias y las instrucciones específicas se encuentran junto al proyecto correspondiente.
 
-La carpeta `resultados/` contiene las matrices y reportes en CSV, las gráficas PNG, el manifiesto de particiones, las predicciones, las conclusiones y los dos modelos completos en formato `.keras`. `configuracion.json` registra las versiones utilizadas y el orden de las clases. Los modelos reciben imágenes RGB de 128 × 128 píxeles con valores entre 0 y 255 e incluyen su normalización.
+[Abrir Caltech 101 en Google Colab](https://colab.research.google.com/github/Aldous6/IA/blob/main/caltech101_colab/Caltech101_10_clases.ipynb).
 
-Para ejecutar localmente con Python 3.12, instala las dependencias con `python -m pip install -r requirements.txt` y ejecuta `python ejecutar_notebook.py`. Este último comando vuelve a entrenar y guarda las salidas en el notebook. `crear_notebook.py` regenera el documento sin resultados y `preparar_datos.py` permite descargar y verificar el archivo original por separado. No se incluyen el dataset, los checkpoints intermedios ni las cachés; el notebook los genera al ejecutarse. Las rutas personales de las salidas publicadas se sustituyeron por rutas relativas.
+Se excluyen el entorno virtual, las cachés, el dataset descargado de Caltech y los archivos regenerables indicados en `.gitignore`.

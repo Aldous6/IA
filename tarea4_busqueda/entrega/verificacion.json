@@ -1,0 +1,213 @@
+{
+  "colores_prueba_K4": {
+    "0": 1,
+    "1": 2,
+    "2": 3,
+    "3": 4
+  },
+  "mono_instancia_de_prueba": {
+    "inicial": [
+      0,
+      0,
+      1,
+      2,
+      0,
+      0,
+      false
+    ],
+    "bananas_en_zona": 3,
+    "plan": [
+      {
+        "accion": [
+          "caminar",
+          1
+        ],
+        "estado": [
+          1,
+          0,
+          1,
+          2,
+          0,
+          0,
+          false
+        ]
+      },
+      {
+        "accion": [
+          "empujar",
+          "C1",
+          3
+        ],
+        "estado": [
+          3,
+          0,
+          3,
+          2,
+          0,
+          0,
+          false
+        ]
+      },
+      {
+        "accion": [
+          "caminar",
+          2
+        ],
+        "estado": [
+          2,
+          0,
+          3,
+          2,
+          0,
+          0,
+          false
+        ]
+      },
+      {
+        "accion": [
+          "empujar",
+          "C2",
+          3
+        ],
+        "estado": [
+          3,
+          0,
+          3,
+          3,
+          0,
+          0,
+          false
+        ]
+      },
+      {
+        "accion": [
+          "apilar",
+          "C1",
+          "C2"
+        ],
+        "estado": [
+          3,
+          0,
+          3,
+          3,
+          2,
+          0,
+          false
+        ]
+      },
+      {
+        "accion": [
+          "subir",
+          "C1"
+        ],
+        "estado": [
+          3,
+          1,
+          3,
+          3,
+          2,
+          0,
+          false
+        ]
+      },
+      {
+        "accion": [
+          "tomar_bananas"
+        ],
+        "estado": [
+          3,
+          1,
+          3,
+          3,
+          2,
+          0,
+          true
+        ]
+      }
+    ]
+  },
+  "registros": {
+    "distribuciones_ilegales_verificadas": 255,
+    "registros_por_archivo": 8,
+    "maximo_consultas_adicionales": 3
+  },
+  "jarras": {
+    "inicial": [
+      0,
+      0,
+      0
+    ],
+    "camino": [
+      {
+        "accion": "llenar 12",
+        "estado": [
+          12,
+          0,
+          0
+        ]
+      },
+      {
+        "accion": "verter 12 a 8",
+        "estado": [
+          4,
+          8,
+          0
+        ]
+      },
+      {
+        "accion": "verter 12 a 3",
+        "estado": [
+          1,
+          8,
+          3
+        ]
+      }
+    ],
+    "acciones_minimas": 3,
+    "estados_descubiertos_hasta_la_meta": 31
+  },
+  "visibilidad_prueba_sintetica": {
+    "nota": "Rectángulo de prueba; no es una digitalización de la figura 3.31.",
+    "inicio": [
+      -1,
+      1
+    ],
+    "meta": [
+      3,
+      1
+    ],
+    "obstaculo": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "estados": 6,
+    "ruta_indices": [
+      0,
+      2,
+      3,
+      1
+    ],
+    "costo_optimo": 4.82842712474619,
+    "costo_analitico": "2 + 2*sqrt(2)",
+    "heuristica_consistente_verificada": true
+  },
+  "figura_331": {
+    "poligonos": 8,
+    "vertices_obstaculos": 33,
+    "estados_con_S_y_G": 35
+  }
+}

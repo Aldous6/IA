@@ -1,0 +1,405 @@
+Click to edit Master title style
+
+Click to edit Master text stylesSecond levelThird levelFourth levelFifth level
+
+*
+
+Click to edit Master text stylesSecond levelThird levelFourth levelFifth level
+
+*
+
+*
+
+Conocimiento, y Sistemas Basados en ConocimientoLos fundamentos y métodos del conocimiento científico se encuentran en lo que se llama, Epistemologíadefinida ésta como: Doctrina de … (lo subrayado)Dimensiones del ConocimientoEn un primer nivel existe conocimiento: Explícito y Tácito.Explícito:	Se refiere al conocimiento sistemático y formal (manuales técnicos, reportes, artículos, libros, etc. )Tácito:	Aquel que cada experto desarrolla basado en su propia experiencia e intuición.En relación a estos dos tipos anteriores se tienen:
+
+Conocimiento
+
+Profundo
+
+Superficial
+
+Procedimental(know-how)
+
+Declarativo(know-what)
+
+Explícito
+
+Tácito
+
+Dominio
+
+Sentido común
+
+Tácito por naturaleza,Repetitivo a veces
+
+Tácito y Explicito
+
+Soumitra Dutta
+
+*
+
+La adquisición de conocimiento implica un cuello de botella y se divide en:
+
+Adquisición de conocimiento
+
+Guiado por un Ing. del Conoci.
+
+Automatizado
+
+Entrevistas		Pruebas,		            Operación	        KBS como ayuda para un Ing. 		corridas experimentales         automática                    del Conocimiento	
+
+Intenta aprender los 		conocimientos relevantes	de un dominio, usando aprendizaje de máquina (ejem: inducción)
+
+Las herramientas necesitan aquí poseer conocimiento para la estructura del mismo y preguntas para obtener mas conocimiento (elicitation).
+
+*
+
+Estructura de un KBS
+
+Base de Conocimientos
+
+Interfaz
+
+Máquina de inferencias
+
+USUARIO
+
+Base de Conocimientos       =      Base de Datos    +    Reglas para interpretar esos datos
+
+Padre
+
+Hijo
+
+Madre
+
+Hijo
+
+RobertoJuanRobertoAndrés
+
+ElenaVictoriaRosaElisa
+
+MaríaSusanaTeresaMartha
+
+Elena, PacoVictoriaRosa
+
+R1: Dos niños son medios hermanos si ellos tienen el mismo        padre.R2: Dos personas están casadas si tienen el mismo hijo...Rn: ….
+
+
+
+*
+
+La máquina de inferencias MI (conceptualizada como procedimientos de búsqueda) toma las decisiones sobre que conocimiento usar para llegar a sus conclusiones.
+
+Búsqueda  de objetivos satisfechos por datos válidos                                    CONOCIMIENTOBúsqueda de datos para satisfacer objetivos especificados
+
+DATOS
+
+OBJETIVOS
+
+INTERFAZ DE USUARIO:Despliega la información al usuario Provee de acceso a la base de conocimientos para modificaciones-interactiva, textual, audio o video
+
+Máquina de Inferencias (MI)
+
+*
+
+Proceso de construcción (2 formas):1.				Experto/Usuario			Compra	       Agrega	                       Obtiene	Herramienta “Shell”	Interfaz			+	Base de		=         KBS o SE					Conocimientos	MI
+
+*
+
+“Shell” del KBS
+
+KBS
+
+Experto del dominio
+
+Ing. Del conocimiento
+
+Usuario final
+
+Usa
+
+Construye,refina, y prueba
+
+Es usado por
+
+Extiende y prueba
+
+Extrae información(entrevistas)
+
+Agrega conocimiento
+
+2.
+
+*
+
+Sistemas de procesamiento del conocimiento. Mecanismos de razonamiento (inferencia) que estén involucrados en el lenguaje usado para representar conocimiento.Un lenguaje para representar conocimiento esta definido por dos partes: Sintaxis: Describe las posibles configuraciones con las que se pueden construir sentencias. Semántica: Determina los hechos en el mundo a los cuales las sentencias se refieren, o sea les da significado a las expresiones.Ejemplo:Si x, y, ≥         son números y símbolos entonces la expresión x ≥ y sintácticamente representa una sentencia acerca de números.La semántica de esa expresión nos dice cuando es falsa y cuando es verdadera.Falsa: y es un número mayor que x.Verdadera: de otra manera.Bajo esos dos conceptos se pueden derivar mecanismos de inferencia que el programa puede usar.Con ello, se puede derivar información implícita a partir de información explícita.Ejem:	Todos los ferraris son rojos		información explícita	Mi carro es un ferrariSe puede decir entonces: 	Mi carro es rojo	Información implícita	
+
+}
+
+*
+
+Matemáticamente:KB        α		se dice que hay un vinculación entre la base de conocimientos KB y αCon base en esto, un procedimiento de inferencia puede hacer que:1 Dada una KB y una sentencia α, se reporte si dicha sentencia es heredada o no, de la KB.2. Dada una KB, se generen nuevas sentencias α (debido al procedimiento de inferencia ).Cuando esto se tiene entonces se dice que la inferencia mantiene-la-verdad, o preserva-la-verdad .En un sentido lógico, si un procedimiento de inferencia i puede derivar α desde una KB, se escribiría:		KB ├   αSi un procedimiento de inferencia puede encontrar una prueba para cualquier sentencia que esté vinculada, entonces se dice que es completo. Si una sentencia es válida en todas las posibles interpretaciones, se le llama tautología.En resumen, una lógica es un sistema formal para describir los hechos del mundo que consiste de :SintaxisSemánticaTeoría probatoria o de prueba: para deducir las vinculaciones o herencias de un conjunto de sentencias
+
+╨
+
+*
+
+}
+
+v
+
+v
+
+*
+
+Orden de precedencia:De más alto a……..más bajo:	¬,   ^,  v, → , ↔ 	ejemplo: ¬PvQ^R  →S equivale a:(( ¬P ) v ( Q ^ R )) →SSemántica:Es la interpretación que se le quiera dar a P, Q, R, S, etc.Una sentencia tiene un significado derivado de los significados de sus partes. Por tanto cada conectiva puede ser pensada como una función (como la suma en aritmética). Así “and” toma dos valores verdaderos como entrada, y regresa un valor verdadero. Entonces una función se define por su tabla de verdad.TABLA DE VERDAD:	Define la semántica de las sentenciasP	Q	¬P	P ^ Q	P v Q	P → Q	
+
+P ↔Q
+
+FFTT
+
+FTFT
+
+TTFF
+
+FFFT
+
+FTTT
+
+TTFT
+
+TFFT
+
+*
+
+El enunciado «que 5 sea un número impar implica que Tokio es la capital de Japón» es una proposición verdadera dentro de la lógica proposicional (bajo la interpretación habitual), a pesar de que, en el lenguaje cotidiano, resulta una afirmación sumamente extraña. Otro punto que suele generar confusión es que cualquier implicación es verdadera siempre que su antecedente sea falso. Por ejemplo, la afirmación «que 5 sea un número par implica que Sam es inteligente» es verdadera, independientemente de si Sam es inteligente o no. Esto puede parecer absurdo, pero cobra sentido si entendemos la estructura «P implica Q» como: «Si P es verdadero, entonces afirmo que Q es verdadero; en caso contrario, no hago ninguna afirmación». La única forma de que este enunciado sea falso es que P sea verdadero y, al mismo tiempo, Q sea falso.
+
+En una máquina se pueden poner las premisas y las conclusiones, y entonces ella puede revisar todas las filas para sacar una conclusión.La validez de una inferencia se hace a través de la tabla de verdad y puede extenderse a clases enteras de inferencias. A raíz de estos mecanismos surgen los patrones que se llaman “reglas de inferencia” Una vez establecidas esta reglas, entonces se pueden hacer inferencias sin tener que ir sobre las tablas de verdad.Ejem: 		α ├ β  ~  α / β	Si algo se acopla a lo de arriba de la linea, entonces la regla 				de inferencia concluye la premisa bajo la línea	 
+
+P
+
+H
+
+P v H
+
+( P v H ) ^ ¬H
+
+(( P v H ) ^ ¬H → P
+
+FFTT
+
+FTFT
+
+FTTT
+
+FFTF
+
+TTTT
+
+ValidezSi una sentencia es válida en cada fila, entonces es una tautología.Ejem: 	(( P V H ) ^ ¬H → P
+
+*
+
+Reglas de inferencia comúnmente usadas:Modus-Ponens o implicación. α → β,	α	En una implicación, habiendo establecido α ( o desde alfa), se puede inferir β          β		                		               α			       β                                    α   			     Ejem: 		Si la pila no sirve entonces mi carro no arrancará,	la pila no sirve		se concluye que,  mi carro no arrancaráModus Tolens           α			β		      ¬β    α → β,	¬β	Si mi pila no sirve entonces mi carro no arrancará,	mi carro arranca         ¬α		se concluye que la pila si sirve				¬αEliminación “And” (Y)Desde una conjunción se pueden inferir cualquiera de los conjuntores. α1 ^ α2 ^ … ^ αn          αi
+
+*
+
+- Introducción “And” (Y)Desde una lista de sentencias se puede inferir su conjunción.  α1, α2, …, αn α1 ^ α2 ^ … ^ αn- Introducción “Or” 				- Doble negación Desde una sentencia se puede inferir 		 ¬¬α su disyunción con cualquier otra			  α       αi				 	α1 v α2 v … vαn				 				- Resolución unitaria			Si uno de los disyuntores es falso, entonces se puede inferir				el otro como verdadero. α v β,	¬β          α		Resolución			Equivale a una implicación transitivaα v β,	¬β v λ	equivale a:		¬α → β,	β → λ       α v λ				        ¬α → λ				
+
+*
+
+Esas reglas de inferencia también se mantienen en la lógica de primer orden, la cual tiene además:Eliminación universal		Para cualquier sentencia α, una variable u, y un término 					aterrizado g (aquel que no contiene variables, en lugar de eso 				puede contener constantes o símbolos funcionales). Subst. ( {u/g },    α )Ejem:			gusta( x, helado), 	podemos substituir { x / juan } y se infiere			gusta (juan, helado)Eliminación existencial: Para cualquier sentencia α,  una variable u, y una constante k que no aparece en ninguna otra parte de la base de conocimientos KB:      Subst. ( { u / k },    α)Ejem:	  mató (x, victima), se puede inferir:	  mató (Asesino, victima), mientras no aparezca Asesino en alguna otra parte de la KB
+
+A 
+
+u α
+
+A 
+
+x 
+
+E
+
+u α
+
+E
+
+x
+
+*
+
+SISTEMAS DE PRODUCCIÓN- Usan implicaciones como su representación primaria. El consecuente de cada implicación se interpreta como una acción  recomendada, en lugar de simplemente una conclusión lógica.Acciones: Inserciones, Borrados, Entradas, Salidas- Operan con encadenamiento hacia delante. Implementa mecanismos de resolución de conflictos cuando hay más de una  acción recomendada.Algunos sistemas de este tipo son:CLIPS: Proporciona un ambiente para construir reglas y sistemas KBS en diferentes aplicaciones: academia, industria, gobierno,.SOAR: Es una arquitectura cognitiva general para desarrollar sistemas que exhiben comportamiento inteligente. Ejemplos en,   solución de problemas, toma de decisiones, lenguajes , y aprendizaje. Es una evolución del GPS de Newell and SimonsOPS-5: Lenguaje basado en reglas de producción para configurar computadoras.  Los sistemas de producción (SP) son apropiados para la construcción de agentes basados en reglas del tipo:Condición    →    Acción
+
+*
+
+El modelo computacional de los SP incluye:Reglas de producción.Son pares de Condición (donde se define cuando la regla se aplicará  a la instancia del problema) Acción (describe el paso asociado a la solución del problema).Memoria de trabajo (MT).	Describe el estado actual del mundo en un proceso de razonamiento.Estrategia de control (ciclo de reconoce-actúa) 	Genera el conjunto conflicto (subconjunto de las producciones) se selecciona una de las producciones 	(del conjunto anterior) y se ejecuta. 	El ciclo se repite con lo que hay en la memoria de trabajo modificada.La resolución del conflicto puede ser simple, tal como la selección de la primera regla cuya condición se acople al estado del mundo, o heurísticas complejas de selección (algoritmos de búsqueda).El sistema de producción puro no tiene mecanismos de recuperación cuando llega a puntos muertos. Algunos otros permiten el “backtracking”  a un estado previo de la MT. 
+
+MT
+
+C1        A1C2        A2...Cn         An
+
+*
+
+Ejemplo:Conjunto de producciones:
+
+1. ba      ab2. ca      ac3. cb      bc
+
+ITERACION #         MT                       Conjunto Conflicto                Regla disparada           0	           cbaca	          1,2,3			1        1                   cabca                            2                                           2        2                   acbca                            3,2                                        2        3                   acbac                            1,3                                        1        4                   acabc                            2                                           2        5                   aacbc                            3                                           3        6                   aabcc                            0                                       Alto
+
+Estos sistemas representan un modelo general que puede ser programado para hacer cualquiercosa que pueda ser hecha por una computadora. Su fortaleza real es para sistemas basados en conocimiento.La teoría formal de estas ideas provienen de los trabajos de Post (1943), y es equivalente en potencia a la máquina de Turing.
+
+{ 
+
+*
+
+una ilimitada capacidad de memoria obtenida en la forma de una cinta infinita marcada con cuadrados, en cada uno de los cuales podría imprimirse un símbolo. En cualquier momento hay un símbolo en la máquina; llamado el símbolo leído. La máquina puede alterar el símbolo leído y su comportamiento está en parte determinado por ese símbolo, pero los símbolos en otros lugares de la cinta no afectan el comportamiento de la máquina. Sin embargo, la cinta se puede mover hacia adelante y hacia atrás a través de la máquina, siendo esto una de las operaciones elementales de la máquina. Por lo tanto cualquier símbolo en la cinta puede tener finalmente una oportunidad
+
+Esta teoría fue aplicada por Newell y Simons en el desarrollo del sistema GPS (General ProblemSolver).Para dicho sistema se estudio el comportamiento de humanos en la forma de:	- solucionar problemas (probar teoremas, torres de Hanoi,..)	- jugar juegos (ajedrez)	- movimiento de ojos	- descripciones verbales	-etc.Se usan también, los sistemas de producción, en la solución de una gran variedad de problemas de búsqueda.Ejemplo:Acertijo-8
+
+2  8  31  6  47      5
+
+1  2  38      47  6  5
+
+Estado inicial           Estado objetivo
+
+Conjunto de reglas de producción:	Si estado objetivo en MT            ALTO	Si            no está en la orilla de arriba         mueve           arriba	Si            no está en la orilla derecha          mueve           derecha	Si            no está en la orilla de abajo         mueve           abajo	Si            no está en la orilla izquierda        mueve           izquierda
+
+= Espacio en blanco
+
+*
+
+Aquí la MT sería el estado actual (inicial) y el objetivo.El regimen de control puede tener las características de:	- Tratar cada producción en orden	- No permitir lazos	- Parar cuando el objetivo es encontrado.Los sistemas de producción se identifican comunmente con la estrategia de Forward-Chaining (impulsadapor datos), pero tambien pueden controlar la búsqueda con la estrategia Impulsada por objetivos.
+
+*
+
+La estrategia más simple puede ser elegir la primera regla. Otras pueden ser (como en el caso del OPS5):Refracción: Que una regla ya disparada no se vuelva a dispararRecientemente: Se dispara aquella con los patrones que más recientemente se agregaron a la MTEspecificidad: Se dispara aquella regla con más condicionesVENTAJAS DE LOS SISTEMAS DE PRODUCCIÓNOfrecen un marco general de trabajo para implementaciones de búsqueda.Son una herramienta importante en la construcción de sistemas basados en conocimiento debido a su simplicidad, modularidad, modificabilidad, y flexibilidad para aplicarse en la solución de problemas y otras aplicaciones de IA.Saparación del conocimiento y el control.El alcance de las variables esta confinado en las reglas.Mapeo natural del espacio de búsqueda.Ejemplo:Se tiene un tablero de 9 posiciones y los siguientes datos:En MT hay: Inicio (en posición 1) y objetivo (posición 2).Determinar las reglas de producción del sistema ydescribir la ejecucion del mismo en la búsqueda de la trayectoriade la posición 1 a la 2 y de acuerdo al movimiento de un caballode AJEDREZ.
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+*
+
+Si caballo en cuadro 1 → mueve caballo a cuadro 8Si caballo en cuadro 1 → mueve caballo a cuadro 6Si caballo en cuadro 2 → mueve caballo a cuadro 9Si caballo en cuadro 2 → mueve caballo a cuadro 7Si caballo en cuadro 3 → mueve caballo a cuadro 4Si caballo en cuadro 3 → mueve caballo a cuadro 8Si caballo en cuadro 4 → mueve caballo a cuadro 9Si caballo en cuadro 4 → mueve caballo a cuadro 3Si caballo en cuadro 6 → mueve caballo a cuadro 1Si caballo en cuadro 6 → mueve caballo a cuadro 7Si caballo en cuadro 7 → mueve caballo a cuadro 2Si caballo en cuadro 7 → mueve caballo a cuadro 6Si caballo en cuadro 8 → mueve caballo a cuadro 3Si caballo en cuadro 8 → mueve caballo a cuadro 1Si caballo en cuadro 9 → mueve caballo a cuadro 2Si caballo en cuadro 9 → mueve caballo a cuadro 4 
+
+Iteración
+
+                     MTCuadro actual      Objetivo
+
+Conjunto conflicto
+
+Regla disparada
+
+0
+
+1
+
+2
+
+1, 2
+
+1
+
+1
+
+8
+
+2
+
+13,14
+
+13
+
+2
+
+3
+
+2
+
+5, 6
+
+5
+
+3
+
+4
+
+2
+
+7, 8
+
+7
+
+4
+
+9
+
+2
+
+15, 16
+
+15
+
+5
+
+2
+
+2
+
+Alto
+
+Régimen de control con esquema de resolución de conflicto Disparar la primera regla que no cause lazosBacktracking en estados ya visitados.Aplicar reglas hasta que el estado actual sea igual alobjetivo
+
+Ejecución
+
+Conjunto total de reglas posibles (note que no hay para la posición 5 porque no puede ir legalmente, como en el ajedrez, a otra posición)
+
+*
+
+Para el conjunto de producciones  siguiente, trazar las ejecuciones respectivas. Utilizado los dos métodos de razonamiento (hacia atras y hacia Adelante)  identificando y/o definiendo para ello las partes (reglas de producción, MT, estrategia de control) del modelo computacional del Sistema de Producción, que intervendrian en el proceso de ejecución. Cual me’todo es, en este caso, ma’s eficiente?
+
+p Λ q → objetivor  Λ s → pw Λ r → qt  Λ u → qv  → sInicio → v ^ r ^ q
+
+Tarea 7
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*
+
+*

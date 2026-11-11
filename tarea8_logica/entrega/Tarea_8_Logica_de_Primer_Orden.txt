@@ -1,0 +1,113 @@
+Tarea 8 · Lógica de primer orden
+
+Representación de expresiones con un vocabulario consistente
+
+Fuente del enunciado: presentación 12-Logica-ProcedSkolem_Est.pptx, lámina 10.
+
+Vocabulario común
+
+El dominio contiene personas, instantes, cursos y localidades. Las constantes ia y pueblo designan, respectivamente, el curso de Inteligencia Artificial y el pueblo mencionado. Se usan los mismos símbolos y el mismo orden de argumentos en las tres expresiones.
+
+Persona(x): x es una persona.
+
+Tiempo(t): t es un instante del intervalo temporal considerado.
+
+Estudiante(x): x es estudiante.
+
+Inteligente(x): x es inteligente.
+
+Lleva(x, c): La persona x cursa el curso c.
+
+Aprueba(x, c): La persona x aprueba el curso c.
+
+Politico(x): x es político.
+
+PuedeEnganar(p, x, t): La persona p puede engañar a la persona x en el instante t.
+
+Peluquero(x): x es peluquero.
+
+Hombre(x): x es un hombre.
+
+ViveEn(x, l): La persona x vive en la localidad l.
+
+CortaPelo(x, y): La persona x corta el pelo a la persona y.
+
+Estudiante, Inteligente, Politico, Peluquero y Hombre se interpretan sobre personas. Lleva y Aprueba relacionan personas con cursos; ViveEn, personas con localidades. Persona y Tiempo restringen explícitamente las variables cuando corresponde.
+
+Notación: ∀ = para todo; ∃ = existe al menos uno; ∧ = y; ¬ = no; → = si… entonces; ↔ = si y sólo si.
+
+1. Estudiantes y curso de IA
+
+«Cada estudiante inteligente que lleva el curso de IA lo pasa».
+
+∀x [(Estudiante(x) ∧ Inteligente(x) ∧ Lleva(x, ia))
+     → Aprueba(x, ia)]
+
+Para cualquier individuo x, si es estudiante, es inteligente y cursa IA, entonces aprueba ese mismo curso. Las tres condiciones se unen mediante conjunción y forman el antecedente de la implicación. La constante ia evita cambiar de curso entre el antecedente y la conclusión.
+
+2. Políticos, personas y tiempo
+
+«Los políticos pueden engañar a algunas personas todo el tiempo y ellos pueden engañar a todas las personas algún tiempo, pero ellos no pueden engañar a toda la gente todo el tiempo».
+
+Se toma como lectura principal que, para cada político, hay algún instante común en el que puede engañar a todas las personas. Ese instante puede ser diferente para cada político. PuedeEnganar representa capacidad; no afirma que el engaño ocurra efectivamente.
+
+∀p [Politico(p) → (
+  ∃x [Persona(x) ∧ ∀t (Tiempo(t) → PuedeEnganar(p, x, t))]
+  ∧ ∃t [Tiempo(t) ∧ ∀x (Persona(x) → PuedeEnganar(p, x, t))]
+  ∧ ¬∀x∀t [(Persona(x) ∧ Tiempo(t)) → PuedeEnganar(p, x, t)]
+)]
+
+La primera conjunción elige al menos una persona x y después exige que ese político pueda engañarla en todo instante. El orden ∃x∀t mantiene a la misma persona a través del tiempo; esa persona puede depender del político.
+
+La segunda conjunción elige un instante t antes de cuantificar a todas las personas. El orden ∃t∀x exige un momento común para ellas. No exige un mismo momento para todos los políticos, porque ∃t queda dentro de ∀p.
+
+La tercera conjunción niega la combinación «todas las personas, todo el tiempo». No dice que el político nunca pueda engañar a nadie. Para un político p, esa negación equivale a:
+
+∃x∃t [Persona(x) ∧ Tiempo(t) ∧ ¬PuedeEnganar(p, x, t)]
+
+Es decir, hay al menos una persona y un instante en los que ese político no puede engañarla. «Pero» se representa como conjunción: añade una condición, sin introducir un conector lógico distinto.
+
+Lectura alternativa del tiempo
+
+Si «a todas las personas algún tiempo» permite que cada persona tenga un instante diferente, se reemplaza únicamente la segunda conjunción por:
+
+∀x [Persona(x) →
+    ∃t (Tiempo(t) ∧ PuedeEnganar(p, x, t))]
+
+Ahora el orden es ∀x∃t. No es equivalente a la lectura principal: podría engañar siempre a C, a A sólo en t₀ y a B sólo en t₁, sin poder engañar a las tres en un mismo instante. Por eso se declara expresamente la lectura utilizada. [1]
+
+3. El peluquero y los hombres del pueblo
+
+«Existe un peluquero quien corta el pelo a todos los hombres del pueblo quienes no se lo cortan por sí mismos».
+
+∃b [Peluquero(b) ∧
+    ∀x ((Hombre(x) ∧ ViveEn(x, pueblo) ∧ ¬CortaPelo(x, x))
+        → CortaPelo(b, x))]
+
+Existe al menos un peluquero b tal que, para cada x, si x es hombre, vive en el pueblo y no se corta el pelo a sí mismo, entonces b le corta el pelo. La misma variable b permanece bajo el alcance del existencial para todos los hombres considerados.
+
+CortaPelo(x, x) expresa que x se corta el pelo a sí mismo. Su negación describe a los hombres a quienes debe atender el peluquero. El existencial no exige que haya un único peluquero.
+
+Precisión sobre la paradoja del barbero
+
+El texto dice que atiende a todos los hombres que cumplen la condición; no añade que atienda solamente a ellos. Por eso se usa → y no ↔. Tampoco afirma que el peluquero sea un hombre del pueblo. La traducción literal no obliga a una contradicción.
+
+Por ejemplo, puede haber dos hombres del pueblo, b y m: b es peluquero, se corta el pelo a sí mismo y también se lo corta a m; m no se lo corta a sí mismo. Este caso satisface la fórmula literal.
+
+La versión clásica requiere condiciones adicionales: que b sea hombre del pueblo y que atienda a esos hombres si y sólo si no se cortan el pelo por sí mismos. [2] Esa versión más fuerte sería:
+
+∃b [Peluquero(b) ∧ Hombre(b) ∧ ViveEn(b, pueblo) ∧
+    ∀x ((Hombre(x) ∧ ViveEn(x, pueblo)) →
+        (CortaPelo(b, x) ↔ ¬CortaPelo(x, x)))]
+
+Al sustituir x = b en esa versión se obtiene CortaPelo(b, b) ↔ ¬CortaPelo(b, b), que es contradictorio. Estas condiciones adicionales no se incorporan a la respuesta literal de la tarea.
+
+Fuentes de consulta
+
+Material del curso: 12-Logica-ProcedSkolem_Est.pptx, lámina 10. Las formalizaciones y los ejemplos de interpretación son elaboración propia.
+
+[1] Stanford University, CS103. First-Order Translation Checklist. Alcance de variables y combinación de cuantificadores y conectivos.
+https://web.stanford.edu/class/cs103/fol_checklist
+
+[2] William J. Rapaport, University at Buffalo. The Barber Paradox. Explicita «todos y solamente», y la pertenencia del barbero al pueblo.
+https://cse.buffalo.edu/~rapaport/191/barber.html

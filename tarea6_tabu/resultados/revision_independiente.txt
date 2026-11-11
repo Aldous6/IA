@@ -1,0 +1,22 @@
+Revision independiente de Tarea 6
+Fecha: 2026-11-03
+
+Resultado: no se detectaron errores de implementacion ni inconsistencias materiales en los resultados revisados.
+
+Las cinco funciones de templado_base.py son identicas, por AST, a las funciones originales de Tarea 5; se conserva la aceptacion logistica y el generador aleatorio.
+
+160 registros unicos: cuatro tamanos por veinte semillas por dos algoritmos. Todas las corridas consumen 91700 evaluaciones y las 80 parejas comparten exactamente ruta y costo iniciales. Datos anidados y las 15 ciudades originales comprobados.
+
+Las 20 corridas de templado para N=15 reproducen exactamente rutas iniciales, mejores rutas, costos iniciales/mejores/finales, movimientos aceptados y empeoramientos de Tarea 5. Los tiempos se midieron de nuevo.
+
+Caducidad comprobada para horizontes 1, 5 y 9: un cambio en k bloquea k+1 a k+h y se libera en k+h+1. Aspiracion permite mejorar estrictamente el mejor global y no admite empates tabu.
+
+Las primeras diez decisiones tabu de cada tamano coinciden con una enumeracion independiente de todos los vecinos admisibles: identidad del intercambio, minimo elegido, costo, aspiracion y vencimiento.
+
+Corridas cortas instrumentadas verifican el conteo real de llamadas de costo, incluidos candidatos tabu y barrido final parcial; la evaluacion inicial y la asercion final quedan fuera del presupuesto.
+
+Ocho resumenes y cuatro comparaciones emparejadas recalculados de forma independiente: media, desviacion muestral, extremos, mediana y cuartiles de tiempo, reduccion, exitos exactos y diferencias porcentuales.
+
+Ocho historiales de convergencia coherentes, presupuesto final exacto y mejor global monotono. Barridos tabu completos mas el subconjunto final; templado registra cada cien propuestas.
+
+Alcance y limites: no se repitio el experimento completo. Se revisaron los archivos de codigo, los 160 registros y todas las estadisticas guardadas; se ejecutaron verificaciones cortas y trazas independientes. Se conserva una instancia por tamano: las veinte semillas varian la ruta inicial. Horizonte fijo cinco, presupuesto fijo y tiempos locales no justifican conclusiones universales. No se afirma optimalidad para N=30 ni N=50. Las desviaciones del orden de 1e-14 cuando todos los costos son iguales son redondeo numerico, equivalentes a cero a la precision reportada.

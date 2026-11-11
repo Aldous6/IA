@@ -1,0 +1,18 @@
+Revision independiente de Tarea 8
+Fecha: 2026-11-03
+
+Resultado: no se detectaron errores en las formulas finales ni en las explicaciones revisadas.
+
+Se contrastaron formulas.json, el contenido del generador y la entrega de texto. Las cinco formulas (tres respuestas, lectura temporal alternativa y version reforzada del barbero) coinciden literalmente con el texto entregado. El enunciado corresponde a la diapositiva 10 de la presentacion 12.
+
+El vocabulario conserva aridades y orden de argumentos. La constante ia permanece en antecedente y consecuente. Las variables de las respuestas completas estan cuantificadas; p queda libre intencionalmente en el fragmento alternativo, que reemplaza una conjuncion dentro del alcance de forall p. La interpretacion de tipos se explica en el vocabulario y las guardas Persona y Tiempo restringen los cuantificadores mixtos.
+
+Comprobacion finita 1: personas A,B,C; unico politico C; instantes 0,1. C puede enganar a C en ambos instantes, a A solo en 0 y a B solo en 1. Se cumple la primera y tercera clausula de politicos y la lectura forall persona existe instante; no se cumple existe instante forall persona. El politico pertenece a Persona. Esto confirma la no equivalencia indicada en el texto.
+
+Comprobacion finita 2: C puede enganar a A en ambos instantes y a B y C solo en 0. Se satisfacen las tres clausulas de la lectura principal, incluido un instante comun para todas las personas. Las dos lecturas son satisfacibles. En ambos modelos la negacion de todos-personas/todos-tiempos coincide con la existencia de una persona y un instante negativos.
+
+Comprobacion finita 3: hombres del pueblo b,m; b es peluquero; CortaPelo(b,b) y CortaPelo(b,m) son verdaderos y m no se corta a si mismo. La formula literal con implicacion es verdadera aun siendo b un hombre del pueblo. La version reforzada con bicondicional es falsa en ese modelo.
+
+La contradiccion de la version reforzada se verifica en la instancia x=b: para ambos valores posibles de CortaPelo(b,b), la equivalencia entre ese valor y su negacion es falsa. La pertenencia de b a los hombres del pueblo es necesaria para esta sustitucion en la regla restringida. No se trasladan esas condiciones adicionales a la respuesta literal.
+
+Alcance: revision logica y comprobaciones finitas pequenas; no es una comprobacion mediante un demostrador automatico ni una revision visual de Word/PDF. No se modificaron documentos ni generador.

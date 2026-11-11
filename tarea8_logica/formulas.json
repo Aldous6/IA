@@ -1,0 +1,26 @@
+{
+  "fuente_enunciado": "12-Logica-ProcedSkolem_Est.pptx, lámina 10",
+  "vocabulario": {
+    "Persona(x)": "x es una persona.",
+    "Tiempo(t)": "t es un instante del intervalo temporal considerado.",
+    "Estudiante(x)": "x es estudiante.",
+    "Inteligente(x)": "x es inteligente.",
+    "Lleva(x, c)": "La persona x cursa el curso c.",
+    "Aprueba(x, c)": "La persona x aprueba el curso c.",
+    "Politico(x)": "x es político.",
+    "PuedeEnganar(p, x, t)": "La persona p puede engañar a la persona x en el instante t.",
+    "Peluquero(x)": "x es peluquero.",
+    "Hombre(x)": "x es un hombre.",
+    "ViveEn(x, l)": "La persona x vive en la localidad l.",
+    "CortaPelo(x, y)": "La persona x corta el pelo a la persona y."
+  },
+  "constantes": {
+    "ia": "curso de IA",
+    "pueblo": "pueblo mencionado"
+  },
+  "expresion_1": "∀x [(Estudiante(x) ∧ Inteligente(x) ∧ Lleva(x, ia))\n     → Aprueba(x, ia)]",
+  "expresion_2_lectura_tiempo_comun": "∀p [Politico(p) → (\n  ∃x [Persona(x) ∧ ∀t (Tiempo(t) → PuedeEnganar(p, x, t))]\n  ∧ ∃t [Tiempo(t) ∧ ∀x (Persona(x) → PuedeEnganar(p, x, t))]\n  ∧ ¬∀x∀t [(Persona(x) ∧ Tiempo(t)) → PuedeEnganar(p, x, t)]\n)]",
+  "alternativa_segunda_conjuncion_tiempo_individual": "∀x [Persona(x) →\n    ∃t (Tiempo(t) ∧ PuedeEnganar(p, x, t))]",
+  "expresion_3_literal": "∃b [Peluquero(b) ∧\n    ∀x ((Hombre(x) ∧ ViveEn(x, pueblo) ∧ ¬CortaPelo(x, x))\n        → CortaPelo(b, x))]",
+  "version_barbero_con_condiciones_adicionales": "∃b [Peluquero(b) ∧ Hombre(b) ∧ ViveEn(b, pueblo) ∧\n    ∀x ((Hombre(x) ∧ ViveEn(x, pueblo)) →\n        (CortaPelo(b, x) ↔ ¬CortaPelo(x, x)))]"
+}

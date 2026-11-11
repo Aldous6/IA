@@ -1,0 +1,548 @@
+LAMINA 1
+Fundamentos de Programación Lógica
+(J. W. Lloyd, 1987)
+Conceptos generales:
+-
+Término
+	a) Una variable	
+N, x, y, 
+….
+	b) Una constante	
+3, A, 
+…
+	c) Una función	
+f(t
+1
+, …, 
+t
+n
+ 
+)
+	ó	
+f(3, g(N))
+	donde 
+f 
+   
+es un símbolo funcional 
+n-ario
+Wff
+ :
+	a)  Si 
+p
+ es un símbolo de predicado n-ario y	
+t
+1
+, …, 
+t
+n
+ 
+ 
+	son  términos, entonces
+                                                                                                        	
+ 
+p(t
+1
+, …, 
+t
+n
+ 
+)
+	es una fórmula, fórmula atómica,  o átomo
+b) Si 
+F
+ y 
+G
+ son fórmulas, entonces	
+¬F, (F ^ G), F v G, F → G, F ↔ G 
+	son fórmulas
+c) Si 
+F
+ es una fórmula y 
+x
+ es una variable, entonces		y     	       son fórmulas	
+Fórmula cerrada:
+Es aquella fórmula 
+sin
+ ocurrencias 
+libres 
+de 
+niguna
+ 
+variable.
+Ejemplo:
+	
+                                                     si es,      y                                                          no 
+es.
+		       
+Literal:
+	 Es un átomo o la negación de un átomo y se consideran como aplicaciones de predicados con
+ 
+sus términos.
+		es una literal positiva
+		es una literal negativa
+Expresan unidades de conocimiento	ejemplo: 
+pedro
+ es padre de 
+juan
+ 
+				sería: 
+padre(
+pedro
+, 
+juan
+)
+Esta
+ 
+ocurre
+ sin 
+estar
+ 
+acotada
+LAMINA 2
+Cláusula:
+	Es una fórmula de la forma			donde 
+L
+i 
+ es una literal y 
+x
+1
+ , …, 
+x
+s
+ 
+son
+	todas las variables que ocurren en 
+L
+1
+ v … v L
+m
+ 
+ 	
+  
+ 	
+En esta notación, en programación lógica, todas la variables se supone que están universalmente
+ 
+ 	cuantificadas, entonces solo 
+se expresarían 
+así: 
+	
+				
+				
+L
+1  
+ v L
+2 
+ v …v L
+m 
+ 
+	Si se tiene por ejemplo:				                       equivale a
+							y en forma de cláusula	
+												
+				
+Fórmula tautológica
+:
+	Es una fórmula que siempre representa el valor verdadero, independientemente de la 
+	interpretación de sus predicados, funciones, y variables.
+Cláusulas de programa definido:
+	Aquellas que contienen solo un átomo en su consecuente (la cabeza).
+Cláusula unitaria: 
+	Aquella con cuerpo vacio						
+Programa definido
+:
+	Es un conjunto finito de cláusulas de programa definido.
+LAMINA 3
+Una fórmula en forma normal conjuntiva consta de cláusulas  	
+C
+1
+ , C
+2
+ , …, C
+r 
+ 
+ y tiene la forma:
+	
+En la programación lógica se considera como conjunto de cláusulas:   
+{C
+1
+ , C
+2
+ , …, C
+r
+ }
+Y como cláusula vacía : 	
+{ }, [ ], 
+□
+	
+donde tanto el antecedente como el consecuente están vacíos.
+En relación al procesamiento:
+El conocimiento dado siempre tiene la forma de un conjunto de cláusulas. Entonces dicho procesamiento se
+refiere siempre a una pregunta expresada por una fórmula F:
+     Es verdadera la implicación de 
+F
+ por conclusión del conjunto de cláusulas ?
+O sea:
+	Es verdadero    		 F ?
+Lógicamente esto es verdadero si y solo si		 	siempre es falso.
+Por eso se puede derivar  
+F
+  por implicaciones o se puede verificar que la fórmula anterior es una 
+contradicción. De acuerdo a este método
+, se niega la pregunta 
+y se introduce al conocimiento dado.
+Refutación: 
+Se la llama a la demostración (verificación) de una contradicción, y se necesitan conclusiones
+lógicas (reglas de inferencia como las ya vistas) para ejecutarla. El método mas usado es la 
+resolución
+.
+Cuando se demuestra por este medio, se concluye 
+dentro del conjunto resultante, la cláusula vacía
+, llegando
+así a una contradicción.
+	                          
+?
+?
+LAMINA 4
+Ejemplo:
+Preguntamos  	Es válido	
+( a          b)  v  a    
+?
+De acuerdo a lo anterior aquí no se a dado ningún conocimiento, entonces esta vacio de cláusulas y lo que se 
+tiene es solo la pregunta para la refutación.
+O sea:				Negamos la pregunta, y luego resolvemos la implicación.
+				Equivalencias 
+D’Morgan
+. y Otras:
+Y ya como conjunto de cláusulas:	
+O también:   1. a
+	2. ~b
+	3. ~a	1 y 3 : []               Clausula vacía 
+Entonces la expresión es válida
+					
+?
+Ya con los predicados, dos cláusulas hacen una resolución si una contiene una literal positiva y la otra una
+literal negativa.
+			donde para cada par de argumentos 
+(t
+i
+ , s
+i
+ ), i = 1, 2,…, n
+	existe una
+especialización común 
+r
+i
+ 
+. Esta se da por medio de una substitución (unificación), la cual se tiene que aplicar
+a todas las literales de las dos cláusulas.
+Ejemplo:	si 	
+t
+1 
+= f (x, 3)    y    s
+1
+= f (5, y)
+	entonces unificando tendríamos  
+x
+ = 5
+   y  
+y
+ = 3
+  
+El problema general de este método es evitar la ejecución de todas las soluciones posibles. Para ello se 
+necesitan estrategias heurísticas.
+a 
+ b
+ v b
+ 
+LAMINA 5
+Procedimiento 
+para la eliminación de cuantificadores existenciales, cuando éstos se encuentran bajo el alcance de 
+cuantificadores universales.
+Ejemplo:			ó
+Dichos cuantificadores se pueden cambiar por constantes o funciones 
+Skolem
+ que no han sido usadas en otra fórmula.
+Porque puede hacerse?
+Porque sabemos que hay una individualidad con propiedad relevante, pero no sabemos si es idéntica a cualquiera
+de las que tenemos información. Es por ello que una variable cuantificada existencialmente no puede cambiarse 
+fácilmente por una constante, para ello debemos considerar la semántica implícita.
+Ejemplo:  “Cada quien tiene una madre“			se lee:  “la madre de 
+x
+ es 
+y
+“
+Si solo 
+remplazamos 
+la “
+y
+ 
+“ por una constante, por ejemplo 
+a
+, esto se vería así:
+		
+                    y 
+se leería : 	“la madre de todos es 
+a
+”
+Por ello debemos usar símbolos funcionales (funciones 
+Skolem
+) en lugar de las variables correspondientes a cada 
+cuantificador existencial, siendo sus argumentos las variables de los cuantificadores universales en cuyo alcance ocurre
+el existencial antes dicho. El ejemplo anterior quedaría:
+				
+	y en el otro caso,
+O sea, como no se sabe que individualidad de z es la que está bajo el alcance de 	      entonces se representa
+como una dependencia funcional bajo los dominios de todas esas variables de esos cuantificadores universales.
+	
+Eliminación existenciales
+LAMINA 6
+Casos de unificaciones válidas e inválidas
+Literales implicadas	Unificación resultante 	
+p(x, x),	-p(a, a)  -----	{x/a}
+p(x, x),	-p(a, b)  -----	falla
+p(x, y),	-p(a, b)  -----	{x/a, y/b}
+p(x, y),	-p(a, a)  -----	{x/a, y/a}
+p(f(x), b),	-p(f(c), z) ---	{x/c, z/b}
+p(x, f(x)),	-p(y, z)   -----	{x/y,  z/f(y)}
+p(x, f(x)),	-p(y, y)  -----	falla
+Ejemplo:
+Todas las compañías que son de menor valor que otras compañías o que son volátiles, son inversiones pobres.
+De cualquier modo Inversiones Inteligentes SA.  es una de inversión pobre o por todas las compañías hay alguna otra
+compañía que crece menos rápido.
+Inversiones 
+Silly
+ SA. crece menos rápido que todas las compañías.
+Probar: Alguna compañía es de 
+inversión pobre:
+			donde:
+						p	inversión pobre
+						q	menor valor
+						v	volátil
+						s	crece menos rápido
+						a	inversiones inteligentes 
+sa.
+						b	inversiones 
+Silly
+ 
+sa.
+Buscar
+ 
+siempre
+ la 
+coherencia
+ de 
+interpretación
+De 
+todas
+ las 
+compañias
+ que 
+no
+ 
+crecen
+ 
+menos
+ 
+rápido
+, hay 
+una
+ que 
+crece
+ 
+menos
+ 
+rápido
+Objetivo
+LAMINA 7
+Para probar ese objetivo entonces lo negamos y hacemos el procedimiento de 
+Skolem
+.
+Substitución de variables
+			1	
+			2
+			3
+			4
+2. Eliminación de 
+implicaciones. De P → Q    se infiere:    
+			2
+3
+. Reducir el alcance de la negación, por 
+D’Morgan
+, doble negación, y dualidad de los cuantificadores,
+			1
+			2
+			3
+			4
+4. Eliminando existenciales por constantes (que no han sido usadas) o funciones 
+Skolem
+ cuando el existencial
+    está en el alcance del universal, 
+o por equivalencias entre cuantificadores, la 1 y la 3  quedan:
+			1		usando aquí   en la 1. Y una función 
+Skolem
+ en la 3
+					
+   
+			3
+LAMINA 8
+5. Mover al frente los cuantificadores universales.
+		1
+		
+		2
+		3
+		4
+6. Quitar los cuantificadores universales y usar la convención de que cada variable es cuantificada 
+    universalmente.
+		1
+		2
+		3
+		4
+7. Conversión a forma normal conjuntiva.
+		1			
+		
+2
+				Usando aquí la equivalencia:
+		
+		3
+		
+4
+8
+. Representar separadamente las conjunciones
+.
+		1
+	
+	2
+	
+	3
+	
+	4
+	
+	5
+LAMINA 9
+9. Estandarización 
+de variables aparte. En esta parte podemos llegar a lo que llamamos literales, tratando las
+    disyunciones 
+como conjuntos y sus miembros.
+		1.
+		2.
+		3.
+		4.
+		5.
+RESOLUCIÓN:
+					1 y 2 : 6.		no resuelve con ninguna otra.
+					1 y 3 : 7.  			“
+					1 y 4 : 8. 
+					8 y 5 : 9. [ ]		unificando { x’/b, w/f(b)}	
+Ventajas del método de representación:
+El método es preciso y ofrece muchas herramientas.
+ Existe una teoría profunda.
+ Existen extensiones para el tratamiento vago y temporal.
+ Existen lenguajes como 
+Prolog
+ y 
+Lisp
+ para la programación de aplicaciones
+ Ya hay experiencias con el método.
+Desventajas: 
+- Existen problemas para la representación cuando el conocimiento esta en fórmulas matemáticas o gráficos.
+Cláusula
+ 
+vacia
+LAMINA 10
+               
+Tarea
+ 8 
+Represente
+ 
+en
+ 
+lógica
+ de primer 
+orden
+ las 
+siguientes
+ 
+expresiones
+, 
+definiendo
+ un 
+vocabulario
+ 
+consistente
+.
+Cada
+ 
+estudiante
+ 
+inteligente
+ que 
+lleva
+ el 
+curso
+ de IA lo 
+pasa
+.
+Los 
+políticos
+ 
+pueden
+ 
+engañar
+ a 
+algunas
+ personas 
+todo
+ el 
+tiempo
+ y 
+ellos
+ 
+pueden
+ 
+engañar
+ a 
+todas
+ las personas 
+algun
+ 
+tiempo
+, 
+pero
+ 
+ellos
+ no 
+pueden
+ 
+engañar
+ a 
+toda
+ la 
+gente
+ 
+todo
+ el 
+tiempo
+.
+Existe
+ un 
+peluquero
+ 
+quien
+ 
+corta
+ el 
+pelo
+ a 
+todos
+ 
+los
+ hombres del pueblo 
+quienes
+ no se lo 
+cortan
+ 
+por
+ 
+si
+ 
+mismos
+.

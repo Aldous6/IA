@@ -1,0 +1,1 @@
+La corrida principal redujo la distancia de 631.089690 a 288.609288 unidades (54.27 %). Se propusieron 91,700 intercambios y se aceptaron 3,331 empeoramientos durante la exploración. 20 de las 20 corridas coincidieron con el óptimo de referencia, con tolerancia absoluta de 1e-8 unidades.

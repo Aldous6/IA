@@ -1,0 +1,83 @@
+{
+  "casos": 8,
+  "pasos_por_caso": 1000,
+  "maximo": 2000,
+  "convencion_principal": "Puntuar el estado antes de la acción en cada paso",
+  "promedio_principal": 1998.25,
+  "promedio_alternativo_despues": 1999.25,
+  "maximo_pasos_para_limpiar": 3,
+  "resultados": [
+    {
+      "inicio": "A",
+      "A_inicial": "limpia",
+      "B_inicial": "limpia",
+      "puntaje_antes": 2000,
+      "puntaje_despues": 2000,
+      "paso_limpieza_completa": 0,
+      "primeras_acciones": "derecha, izquierda, derecha, izquierda, derecha, izquierda"
+    },
+    {
+      "inicio": "B",
+      "A_inicial": "limpia",
+      "B_inicial": "limpia",
+      "puntaje_antes": 2000,
+      "puntaje_despues": 2000,
+      "paso_limpieza_completa": 0,
+      "primeras_acciones": "izquierda, derecha, izquierda, derecha, izquierda, derecha"
+    },
+    {
+      "inicio": "A",
+      "A_inicial": "limpia",
+      "B_inicial": "sucia",
+      "puntaje_antes": 1998,
+      "puntaje_despues": 1999,
+      "paso_limpieza_completa": 2,
+      "primeras_acciones": "derecha, aspirar, izquierda, derecha, izquierda, derecha"
+    },
+    {
+      "inicio": "B",
+      "A_inicial": "limpia",
+      "B_inicial": "sucia",
+      "puntaje_antes": 1999,
+      "puntaje_despues": 2000,
+      "paso_limpieza_completa": 1,
+      "primeras_acciones": "aspirar, izquierda, derecha, izquierda, derecha, izquierda"
+    },
+    {
+      "inicio": "A",
+      "A_inicial": "sucia",
+      "B_inicial": "limpia",
+      "puntaje_antes": 1999,
+      "puntaje_despues": 2000,
+      "paso_limpieza_completa": 1,
+      "primeras_acciones": "aspirar, derecha, izquierda, derecha, izquierda, derecha"
+    },
+    {
+      "inicio": "B",
+      "A_inicial": "sucia",
+      "B_inicial": "limpia",
+      "puntaje_antes": 1998,
+      "puntaje_despues": 1999,
+      "paso_limpieza_completa": 2,
+      "primeras_acciones": "izquierda, aspirar, derecha, izquierda, derecha, izquierda"
+    },
+    {
+      "inicio": "A",
+      "A_inicial": "sucia",
+      "B_inicial": "sucia",
+      "puntaje_antes": 1996,
+      "puntaje_despues": 1998,
+      "paso_limpieza_completa": 3,
+      "primeras_acciones": "aspirar, derecha, aspirar, izquierda, derecha, izquierda"
+    },
+    {
+      "inicio": "B",
+      "A_inicial": "sucia",
+      "B_inicial": "sucia",
+      "puntaje_antes": 1996,
+      "puntaje_despues": 1998,
+      "paso_limpieza_completa": 3,
+      "primeras_acciones": "aspirar, izquierda, aspirar, derecha, izquierda, derecha"
+    }
+  ]
+}

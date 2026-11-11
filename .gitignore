@@ -1,16 +1,17 @@
-datos/
-.keras/
-.jupyter/
-.ipython/
-.ipynb_checkpoints/
 .venv*/
 venv/
 env/
 __pycache__/
 *.py[cod]
-*.weights.h5
-*.zip
+.ipynb_checkpoints/
+.keras/
+.ipython/
+.jupyter/
 .env
 .env.*
+!.env.example
 .DS_Store
 Thumbs.db
+
+# Datos descargados y checkpoints regenerables de Caltech.
+/caltech101_colab/datos/

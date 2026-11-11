@@ -1,0 +1,73 @@
+Click to edit Master title style
+Click to edit Master text stylesSecond levelThird levelFourth levelFifth level
+*
+Click to edit Master title style
+Click to edit Master text stylesSecond levelThird levelFourth levelFifth level
+*
+Click to edit Master text stylesSecond levelThird levelFourth levelFifth level
+*
+Estado del Arte de la IA
+AGI Artificial General Intelligence(desde 2002)
+De la empresa Adaptive AI Inc. (a2i2)Objetivo: Crear un sistema autónomo de propósito general que pueda adquirir un rango extremadamente amplio de conocimientos y destrezas. Usa el aprendizaje auto-dirigido basado en ensayos de bajo nivel de habilidades cognitivas(de animales principalmente).Intenta adquirir inteligencia considerándola esta como un todo y de una manera adaptiva. O sea se identifica con el paradigma conexionista.Una primera versión se pensaba en el 2008.A la fecha han creado algunos de los llamados: SmartAction Virtual Agents, mecanismos captcha (Prueba pública de Turing completamente automatizada para diferenciar las computadoras y los humanos).(pretensiones de AGI: conciencia, sensaciones, sapiencia, auto-sensible)“Hacer un ente tan inteligente como el humano” (strong AI)
+Currently, their work is highly multidisciplinary, utilizing insights from computer science, traditional artificial intelligence, computational linguistics, ontology, neural networks, cognitive science, philosophy, psychology, mathematics, software engineering, and others.
+Other central AGI features include an ability to anticipate events and outcomes, and the ability to introspect to be aware of its own cognitive states (such as novelty, confusion, certainty, its level of ability, etc). These design features, combined with the fact that AGIs directly perceive their environments via built-in senses, endow them with human-like understanding of facts and situations.In contrast, systems based on conventional AI technology provide little or no learning capability beyond their initial one-time training phase (if any). Traditional computer programs are designed for specific applications, and are incapable of being used for any other purpose. In fact, even within their given domain any new requirements or changes to their operating environment require costly program changes.
+ACT-R(Adaptive Control for Thought-Rational(desde 1998)
+Es una arquitectura cognitiva cuyo objetivo es el desarrollo de una teoría para entender el cognitivismo (pensamiento) humanoEs un marco de trabajo para diferentes tareas, creando modelos para simular:	-	Aprendizaje y memoria	-	Solución de problemas y toma de decisiones	-	Lenguaje	-	PercepciónHa sido usado en la educación para crear tutores de algebra.Con esta arquitectura (en Carnigie Mellon University) se han creado sistemas para asistencia guiada individualizada para estudiantes en: geometría y programaciónSe puede decir que es una clase de lenguaje de programación para crear modelos y desarrollar tareas.Se identifica con el modelo simbólico.Actualmente se investigan modelos de regiones corticales del cerebro humano.http://act-r.psy.cmu.edu/publications/pubinfo.php?id=526  J.R. Anderson, et. Al.
+CALOCognitive Assistant that Learns and Organizes (DARPA- SRI)
+Objetivo:Construir asistentes cognitivos que puedan razonar, aprender de experiencias, decir hacer, explicar sus acciones, reflexionar sobre sus experiencias y responder a lo imprevisto. Asiste a usuarios con seis funciones de alto nivel:                                              - Organiza y prioriza información (correos, citas, paginas web, etc).Prepara instrumentos de información (ppt, se apoya en docs. pasados, etc.).Mediador entre comunicaciones de humanos (acceso a reuniones, asigna roles, etc..).Manejo de tareas (automatiza tareas rutinarias como la autorización de viajes, etc.).Calendariza y razona sobre el tiempo del usuario, aprende sus preferencias y nece-sidades y ayuda a manejarlas.-Ubica recursos (aprende a adquirir nuevos recursos electrónicos y humanos).Proy. De 5 años, con resultados que emigran a la industria de las aplicaciones inteligentes (Siri). https://en.wikipedia.org/wiki/Virtual_assistant
+   incluido en el iOS 5, iPad, iPod
+ALICE(desde 1994)
+Varias veces ganadora del premio Loebner (una prueba de Turing)Traduce de voz a texto y de texto a voz.(el premio Loebner consiste en otorgar cada año 2,000 libras esterlinas a la computadora más humanaOtros ganadores son: Eliza (terapeuta), Thomas Whalen con su interfaz de lenguaje natural, Albert 1 y Albert 2 que es un modelo de comportamiento conversacional. (conversación inteligente)Se basa principalmente en acoplamiento de patronesALICE(Artificial LInguistic Computer Entity) es un  “chat bot” diseñado por Dr. Richard Wallace. Actualmente hay una versión  de código abierto escrito en Java para modificarse  usando AIML (AI Markup Language). http://www.packtpub.com/voice-application-development-for-android/bookProyecto posible? Investigar                               http://www.alice.org/    Diseño Instruccional?
+Chinooks(90’s Alberta Univ.)
+CAM-BRAINcellular automata machine brain(H. Garis- Univ. de Utah, 1997)
+Es un cerebro artificial de mil millones de neuronasSe basa en autómatas celulares.Su aplicación se centra en el control del comportamiento de un robot (Robokoneko).Su funcionamiento abarca la interacción con su ambiente a través de estímulos para desarrollar la corta “inteligencia” que se atribuye a los animales, bajo lo que se conoce como vida artificial.Se esperaban avances significativos en 2001. (simulación del cerebro de un gato).Programación EvolutivaRetoma en 2008 las ideas para el: China-Brain Project).Artilects War 2005  (libro)  http://agi-conf.org/2008/artilectwar.pdf
+China-Brain2008- actualidad
+DARPA-SyNAPSE (USA) y Brainscale Ingeniería Evolutiva (EU)Miles de módulos de redes neuronales y entonces conectados como un cerebro artificialObjetivo Gral. Miles de módulos (o agentes en el sentido de Minsky) de reconocimiento de patrones para controlar el “comportamiento”de un Robot móvilhttp://vimeo.com/7297453
+HAL(Tributo a HAL-9000 de Odisea 2001)(18 meses de edad- )
+Investigación para crear un programa que simule el comportamiento de un niño y de como empieza a tener conocimiento.Usa el lenguaje como elemento que determina la inteligencia (A. Turing) que la máquina va obteniendo racionalmente (usando algoritmos avanzados de aprendizaje).Comunica necesidades básicasProduce 10 palabras y entiende 60Se basa en Lógica de 1er. orden)Ganadora del Premio Loebner 2007Hal, la máquina infantil de Ai, es una entidad tecnológica basada en un algoritmo de aprendizaje, que está adquiriendo el lenguaje a través del entrenamiento de un equipo de científicos cognitivos y expertos en desarrollo infantil. O sea:Instead of trying to produce a programme to simulate the adult mind, why not rather try to produce one which simulates the child's? If this were then subjected to an appropriate course of education one would obtain the adult brain. -- Alan Turing, 1950
+GACGeneral Artificial Consciousness
+Su objetivo es contruir un modelo estadístico de una mente humana promedioParecido al CYC recolecta millones de trozos-atomos de conocimiento (mindpixeles) de sentido común.Cada mindpixel ~ sentencia, y se dan respuestas para ella segun el sentido común de la mayoría de la genteUtiliza una red neuronal en su base de datos(un grupo frances desde 2005, LIP6-CNRS)Suspendido (principal impulsor muere)Base para el OpenMind Project
+NARSNon-Axiomatic Reasoning SystemPei Wang
+Sistema de razonamiento de propósito general que es adaptivo a su ambienteObjetivo: Entender la mente y construir máquinas que piensenUtiliza reglas de inferencia en Prolog	Deducción	Abducción	Ejemplificación	ComparaciónSe comporta con respuestas razonables cuando el conocimiento es insuficienteSe basa en el paradigma simbólico Algunos avances en código abierto en Java (2004 a la fecha)
+Toward a Logic of Everyday ReasoningSome basic issues in logic (revised version)Different Conceptions of Learning: Function Approximation vs. Self-Organization (by Pei Wang and Xiang Li)Learning in NARS, compared to mainstream machine learningEmotion in NARS (by Pei Wang, Max Talanov, and Patrick Hammer)The emotion mechanism in NARS
+https://www.applied-nars.com/
+NOVAMENTE(desde 2001.USA)
+Objetivo: crear una inteligencia general artificial mediante SoftwareSe basa en lógica con incertidumbre (Bayes) para representar acciones, percepciones, y estados internosO sea implica llevar a cabo diversas tareas en diversos contextos, generalizar conocimiento, y tomar conciencia de si mismo y del mundo.Actualmente desarrolla productos de software para agentes virtuales inteligentes, juegos de computadora y simulaciones. http://video.google.com/videoplay?docid=574581743856443641
+Open AI(Empresa desde 2016)
+Objetivo:	Crear un conjunto altamente operable de componentes de inteligencia mediante el uso de las mejores tecnologías de hoy:	- Agentes móviles (mediante la Internet)	- Redes Neuronales	- Algoritmos genéticos	- Máquinas de estados finitos	- Aprendizaje profundo	- Ambientes de multiagentes en “Juegos”	- Generalización con aprendizaje por refuerzohttps://openai.com
+OSCAR(J.Pollock-Univ. Arizona,1999)
+Objetivo:	Construir una teoría general de cognitivismo racional para poder construir un agente racional artificial (Artilect) que derive conclusiones y haga decisiones consideradas como racionalesUsa razonamiento deductivo y por defectoA la fecha algunos avances pueden utilizarse libremente en la educación.Escrito en LISP
+https://johnpollock.us/ftp/OSCAR-web-page/oscar.html
+CYC(Lenat, Minsky, et, al - MIT)
+Habilita bases de conocimiento-	Integración de bases de datos heterogeneas-	Busqueda inteligente en el Web-	IA Distribuida   Objetivo: Codificar en forma útil de máquina, las millones de piezas que caractérizan el sentido común humano   (la 1ª en su tipo).Basada también en tecnología de agentes para su operación colaborativa.Tendencia hacia el futuro de la información dentro del marco de una Web Semántica
+https://web.archive.org/web/20110226000645/http://opencyc.org/
+https://es.wikipedia.org/wiki/Cyc
+AIRE- MIT
+Agent-based Intelligent Reactive Environments A Research Group at the MIT Computer Science and Artificial Intelligence Laboratory aire is dedicated to examining how to design pervasive computing systems and applications for people. To study this, aire designs and constructs Intelligent Environments (IEs), which are spaces augmented with basic perceptual sensing, speech recognition, and distributed agent logic. aire's IEs (ambientes inteligentes de AIRE) have encompassed a large range of form factors and sizes, from a pocket-sized computer up to networks of conference rooms. Each of these serve as individual platforms, or airespaces on which pervasive computing applications can be layered. Examples of aire applications currently under development include a meeting manager and capture application, contextual and natural language information retrieval, and a sketch interpretation system (developed by the Design Rationale Group). aire forms a core component of MIT's pervasive computing project, Project Oxygen
+Oxygen (Google)
+Administración de comportamientos encaminados al éxito en sus respectivos “roles” (conexión destrezas-accesibilidad)pervasive—it must be everywhere, with every portal reaching into the same information base; embedded—it must live in our world, sensing and affecting it; nomadic—it must allow users and computations to move around freely, according to their needs; adaptable—it must provide flexibility and spontaneity, in response to changes in user requirements and operating conditions; powerful, yet efficient—it must free itself from constraints imposed by bounded hardware resources, addressing instead system constraints imposed by user demands and available power or communication bandwidth; intentional—it must enable people to name services and software objects by intent, for example, "the nearest printer," as opposed to by address; eternal—it must never shut down or reboot; components may come and go in response to demand, errors, and upgrades, but Oxygen as a whole must be available all the time. 
+Algunos ejemplos
+Curiosity mission Marte
+NAO
+ASIMO
+https://www.softbankrobotics.com/emea/es/nao
+Emotion robots learn from people
+- Computadoras- Genética- Nanotecnología- Robotica+ AGI
+https://www.youtube.com/watch?v=za09gP-Aejs
+http://www.wired.co.uk/article/ibm-watson-ai-film-trailer
+https://youtu.be/gJEzuYynaiw
+IBM Watson creates the first AI-made film trailer – and it's incredibly creepy.An artificial being with nanotechnology-infused synthetic DNA named Morgan. El "organismo biológico híbrido con capacidad para tomar decisiones autónomas y respuestas emocionales sofisticadas" es más inteligente que los humanos y madura rápidamente, camina y habla en un mes y físicamente es un adolescente a pesar de tener cinco años.
+Aibo, el nuevo perro robot de Sony10,290 views
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
